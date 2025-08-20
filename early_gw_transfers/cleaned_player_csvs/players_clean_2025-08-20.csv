@@ -1,0 +1,697 @@
+full_name,element_type,now_cost,team,team_code,total_points,team_join_date,pos,team_name
+david_raya_martin,1,55,1,3,10,2024-07-04,GK,Arsenal
+kepa_arrizabalaga_revuelta,1,45,1,3,0,2025-07-01,GK,Arsenal
+karl_hein,1,40,1,3,0,2020-10-28,GK,Arsenal
+tommy_setford,1,40,1,3,0,2024-07-24,GK,Arsenal
+gabriel_dos_santos_magalhaes,2,60,1,3,6,2020-09-01,DEF,Arsenal
+william_saliba,2,60,1,3,9,2019-07-25,DEF,Arsenal
+riccardo_calafiori,2,55,1,3,13,2024-07-29,DEF,Arsenal
+jurrien_timber,2,55,1,3,0,2023-07-14,DEF,Arsenal
+jakub_kiwior,2,55,1,3,0,2023-01-23,DEF,Arsenal
+myles_lewis_skelly,2,55,1,3,0,2022-12-04,DEF,Arsenal
+benjamin_white,2,55,1,3,6,2021-07-30,DEF,Arsenal
+oleksandr_zinchenko,2,50,1,3,0,2022-07-22,DEF,Arsenal
+brayden_clarke,2,40,1,3,0,,DEF,Arsenal
+maldini_kacurri,2,40,1,3,0,,DEF,Arsenal
+josh_nichols,2,40,1,3,0,2024-07-24,DEF,Arsenal
+bukayo_saka,3,100,1,3,3,2018-11-28,MID,Arsenal
+martin_odegaard,3,80,1,3,5,2021-08-20,MID,Arsenal
+noni_madueke,3,70,1,3,1,2025-07-18,MID,Arsenal
+gabriel_martinelli_silva,3,70,1,3,1,2019-07-15,MID,Arsenal
+leandro_trossard,3,70,1,3,0,2023-01-20,MID,Arsenal
+declan_rice,3,65,1,3,6,2023-07-15,MID,Arsenal
+mikel_merino_zazon,3,60,1,3,1,2024-08-27,MID,Arsenal
+fabio_ferreira_vieira,3,55,1,3,0,2022-06-21,MID,Arsenal
+christian_norgaard,3,55,1,3,0,2025-07-10,MID,Arsenal
+ethan_nwaneri,3,55,1,3,0,2022-09-17,MID,Arsenal
+martin_zubimendi_ibanez,3,55,1,3,5,2025-07-06,MID,Arsenal
+reiss_nelson,3,50,1,3,0,2017-07-12,MID,Arsenal
+ismeal_kabia,3,45,1,3,0,2024-09-14,MID,Arsenal
+albert_sambi_lokonga,3,45,1,3,0,2021-07-19,MID,Arsenal
+kai_havertz,4,75,1,3,1,2023-06-28,FWD,Arsenal
+gabriel_fernando_de_jesus,4,65,1,3,0,2022-07-04,FWD,Arsenal
+cristhian_mosquera,2,55,1,3,0,2025-07-24,DEF,Arsenal
+viktor_gyokeres,4,90,1,3,1,2025-07-26,FWD,Arsenal
+emiliano_martinez_romero,1,50,2,7,0,2020-09-16,GK,Aston Villa
+marco_bizot,1,45,2,7,7,2025-07-15,GK,Aston Villa
+joe_gauci,1,40,2,7,0,2024-02-01,GK,Aston Villa
+filip_marschall,1,40,2,7,0,2021-12-13,GK,Aston Villa
+matty_cash,2,45,2,7,8,2020-09-03,DEF,Aston Villa
+lucas_digne,2,45,2,7,6,2022-01-13,DEF,Aston Villa
+ezri_konsa_ngoyo,2,45,2,7,3,2019-07-11,DEF,Aston Villa
+ian_maatsen,2,45,2,7,0,2024-06-28,DEF,Aston Villa
+tyrone_mings,2,45,2,7,6,2019-07-08,DEF,Aston Villa
+pau_torres,2,45,2,7,0,2023-07-12,DEF,Aston Villa
+andres_garcia,2,40,2,7,0,2025-01-21,DEF,Aston Villa
+alex_moreno_lopera,2,40,2,7,0,2023-01-11,DEF,Aston Villa
+lamare_bogarde,2,40,2,7,0,2021-01-07,DEF,Aston Villa
+lino_da_cruz_sousa,2,40,2,7,0,,DEF,Aston Villa
+yasin_ozcan,2,40,2,7,0,2025-06-01,DEF,Aston Villa
+morgan_rogers,3,70,2,7,3,2024-02-01,MID,Aston Villa
+youri_tielemans,3,60,2,7,3,2023-06-14,MID,Aston Villa
+leon_bailey,3,55,2,7,0,2021-08-04,MID,Aston Villa
+emiliano_buendia_stati,3,55,2,7,0,2021-06-10,MID,Aston Villa
+samuel_iling_junior,3,55,2,7,0,2024-07-01,MID,Aston Villa
+donyell_malen,3,55,2,7,1,2025-01-14,MID,Aston Villa
+john_mcginn,3,55,2,7,3,2018-08-08,MID,Aston Villa
+ross_barkley,3,50,2,7,0,2024-07-01,MID,Aston Villa
+enzo_barrenechea,3,50,2,7,0,,MID,Aston Villa
+lewis_dobbin,3,50,2,7,0,2024-06-23,MID,Aston Villa
+boubacar_kamara,3,50,2,7,2,2022-06-11,MID,Aston Villa
+amadou_onana,3,50,2,7,5,2024-07-22,MID,Aston Villa
+ben_broggio,3,45,2,7,0,,MID,Aston Villa
+leander_dendoncker,3,45,2,7,0,2022-09-01,MID,Aston Villa
+jamaldeen_jimoh_aloba,3,45,2,7,0,2024-09-23,MID,Aston Villa
+kadan_young,3,45,2,7,0,,MID,Aston Villa
+ollie_watkins,4,90,2,7,2,2020-09-09,FWD,Aston Villa
+zepiqueno_redmond,4,45,2,7,0,,FWD,Aston Villa
+evann_guessand,3,65,2,7,0,2025-08-08,MID,Aston Villa
+james_wright,1,40,2,7,0,2023-03-31,GK,Aston Villa
+max_weiss,1,45,3,90,0,2025-06-25,GK,Burnley
+etienne_green,1,40,3,90,0,2024-08-07,GK,Burnley
+vaclav_hladky,1,40,3,90,0,2024-07-19,GK,Burnley
+connor_roberts,2,45,3,90,0,2021-08-31,DEF,Burnley
+kyle_walker,2,45,3,90,1,2025-07-05,DEF,Burnley
+hannes_delcroix,2,40,3,90,0,2023-08-22,DEF,Burnley
+owen_dodgson,2,40,3,90,0,2021-08-20,DEF,Burnley
+hjalmar_ekdal,2,40,3,90,1,2023-01-21,DEF,Burnley
+maxime_esteve,2,40,3,90,1,2024-06-14,DEF,Burnley
+quilindschy_hartman,2,40,3,90,1,2025-06-26,DEF,Burnley
+bashir_humphreys,2,40,3,90,0,2025-07-01,DEF,Burnley
+jordan_beyer,2,40,3,90,0,2023-07-01,DEF,Burnley
+lucas_pires_silva,2,40,3,90,0,2024-07-16,DEF,Burnley
+shurandy_sambo,2,40,3,90,0,2024-06-28,DEF,Burnley
+oliver_sonne,2,40,3,90,1,2025-01-01,DEF,Burnley
+axel_tuanzebe,2,40,3,90,0,2025-07-01,DEF,Burnley
+joe_worrall,2,40,3,90,0,2024-08-23,DEF,Burnley
+jaidon_anthony,3,55,3,90,2,2025-07-01,MID,Burnley
+manuel_benson_hedilazio,3,55,3,90,0,2022-08-04,MID,Burnley
+jacob_bruun_larsen,3,55,3,90,1,2025-07-11,MID,Burnley
+enock_agyei,3,50,3,90,0,2023-01-30,MID,Burnley
+darko_churlinov,3,50,3,90,0,2022-08-19,MID,Burnley
+josh_cullen,3,50,3,90,4,2022-07-12,MID,Burnley
+marcus_edwards,3,50,3,90,1,2025-07-01,MID,Burnley
+hannibal_mejbri,3,50,3,90,2,2024-08-28,MID,Burnley
+luca_koleosho,3,50,3,90,0,2023-07-25,MID,Burnley
+josh_laurent,3,50,3,90,2,2024-08-30,MID,Burnley
+loum_tchaouna,3,50,3,90,1,2025-07-02,MID,Burnley
+aaron_ramsey,3,45,3,90,0,2023-08-22,MID,Burnley
+oluwaseun_adewumi,3,45,3,90,0,2024-08-29,MID,Burnley
+jaydon_banel,3,45,3,90,0,2025-02-03,MID,Burnley
+mike_tresor_ndayishimiye,3,45,3,90,0,2024-07-01,MID,Burnley
+zian_flemming,4,55,3,90,1,2025-06-01,FWD,Burnley
+zeki_amdouni,4,50,3,90,0,2023-07-19,FWD,Burnley
+lyle_foster,4,50,3,90,2,2023-01-25,FWD,Burnley
+ashley_barnes,4,45,3,90,0,2025-01-02,FWD,Burnley
+michael_obafemi,4,45,3,90,0,2023-07-01,FWD,Burnley
+martin_dubravka,1,40,3,90,2,2025-08-07,GK,Burnley
+lesley_ugochukwu,3,50,3,90,1,2025-08-06,MID,Burnley
+armando_broja,4,55,3,90,0,2025-08-08,FWD,Burnley
+norberto_murara_neto,1,45,4,91,0,2022-08-07,GK,Bournemouth
+dorde_petrovic,1,45,4,91,2,2025-07-16,GK,Bournemouth
+will_dennis,1,40,4,91,0,2019-08-01,GK,Bournemouth
+callan_mckenna,1,40,4,91,0,2024-02-01,GK,Bournemouth
+alex_paulsen,1,40,4,91,0,2024-07-01,GK,Bournemouth
+illia_zabarnyi,2,50,4,91,0,2023-01-31,DEF,Bournemouth
+marcos_senesi_baron,2,45,4,91,2,2022-08-08,DEF,Bournemouth
+adam_smith,2,45,4,91,1,2014-01-28,DEF,Bournemouth
+adrien_truffert,2,45,4,91,0,2025-06-16,DEF,Bournemouth
+matai_akinmboni,2,40,4,91,0,2025-01-03,DEF,Bournemouth
+owen_bevan,2,40,4,91,0,2022-08-22,DEF,Bournemouth
+james_hill,2,40,4,91,1,2022-01-05,DEF,Bournemouth
+julian_araujo_zuniga,2,40,4,91,0,2024-08-13,DEF,Bournemouth
+chris_mepham,2,40,4,91,0,2019-01-22,DEF,Bournemouth
+julio_soler_barreto,2,40,4,91,0,2025-01-07,DEF,Bournemouth
+justin_kluivert,3,70,4,91,0,2023-07-01,MID,Bournemouth
+antoine_semenyo,3,71,4,91,15,2023-01-27,MID,Bournemouth
+marcus_tavernier,3,55,4,91,4,2022-08-01,MID,Bournemouth
+tyler_adams,3,50,4,91,4,2023-08-20,MID,Bournemouth
+david_brooks,3,50,4,91,4,2018-07-01,MID,Bournemouth
+ryan_christie,3,50,4,91,0,2021-08-31,MID,Bournemouth
+lewis_cook,3,50,4,91,0,2016-07-08,MID,Bournemouth
+philip_billing,3,50,4,91,0,2019-07-29,MID,Bournemouth
+alex_scott,3,50,4,91,2,2023-08-10,MID,Bournemouth
+luis_sinisterra_lucumi,3,50,4,91,0,2024-06-14,MID,Bournemouth
+romain_faivre,3,45,4,91,0,2023-07-13,MID,Bournemouth
+hamed_traore,3,45,4,91,4,2023-07-01,MID,Bournemouth
+dominic_sadi,3,45,4,91,0,,MID,Bournemouth
+zain_silcott_duberry,3,45,4,91,0,2025-01-17,MID,Bournemouth
+ben_winterburn,3,45,4,91,1,2024-11-29,MID,Bournemouth
+francisco_evanilson_de_lima_barbosa,4,70,4,91,1,2024-08-16,FWD,Bournemouth
+enes_unal,4,55,4,91,0,2024-07-01,FWD,Bournemouth
+daniel_adu_adjei,4,45,4,91,0,2022-12-19,FWD,Bournemouth
+eli_junior_kroupi,4,45,4,91,1,2025-02-02,FWD,Bournemouth
+ben_doak,3,50,4,91,0,2025-08-18,MID,Bournemouth
+bafode_diakite,2,45,4,91,0,2025-08-13,DEF,Bournemouth
+remy_rees_dottin,3,45,4,91,0,2024-12-28,MID,Bournemouth
+dango_ouattara,3,60,5,94,0,2025-08-16,MID,Brentford
+caoimhin_kelleher,1,45,5,94,1,2025-06-03,GK,Brentford
+ellery_balcombe,1,40,5,94,0,2016-11-02,GK,Brentford
+matthew_cox,1,40,5,94,0,2021-10-26,GK,Brentford
+julian_eyestone,1,40,5,94,0,2024-08-08,GK,Brentford
+hakon_rafn_valdimarsson,1,40,5,94,0,2024-01-26,GK,Brentford
+nathan_collins,2,50,5,94,0,2023-07-04,DEF,Brentford
+keane_lewis_potter,2,50,5,94,1,2022-07-12,DEF,Brentford
+kristoffer_ajer,2,45,5,94,0,2021-07-21,DEF,Brentford
+rico_henry,2,45,5,94,1,2016-08-31,DEF,Brentford
+michael_kayode,2,45,5,94,1,2025-07-01,DEF,Brentford
+ethan_pinnock,2,45,5,94,0,2019-07-02,DEF,Brentford
+mads_roerslev_rasmussen,2,45,5,94,0,2019-10-27,DEF,Brentford
+sepp_van_den_berg,2,45,5,94,3,2024-08-22,DEF,Brentford
+benjamin_arthur,2,40,5,94,0,2024-03-08,DEF,Brentford
+benjamin_fredrick,2,40,5,94,0,,DEF,Brentford
+aaron_hickey,2,40,5,94,0,2022-07-09,DEF,Brentford
+kim_ji_soo,2,40,5,94,0,2023-07-20,DEF,Brentford
+jayden_meghoma,2,40,5,94,0,2024-08-30,DEF,Brentford
+kevin_schade,3,70,5,94,1,2023-07-01,MID,Brentford
+mikkel_damsgaard,3,60,5,94,0,2022-08-10,MID,Brentford
+antoni_milambo,3,55,5,94,1,2025-07-03,MID,Brentford
+fabio_freitas_gouveia_carvalho,3,50,5,94,2,2024-08-12,MID,Brentford
+jordan_henderson,3,50,5,94,1,2025-07-15,MID,Brentford
+vitaly_janelt,3,50,5,94,0,2020-10-03,MID,Brentford
+mathias_jensen,3,50,5,94,2,2019-07-10,MID,Brentford
+gustavo_nunes_fernandes_gomes,3,50,5,94,0,2024-08-28,MID,Brentford
+frank_onyeka,3,50,5,94,4,2021-07-20,MID,Brentford
+yehor_yarmoliuk,3,50,5,94,2,2022-10-28,MID,Brentford
+romelle_donovan,3,45,5,94,0,2025-07-01,MID,Brentford
+yunus_emre_konak,3,45,5,94,0,2024-01-11,MID,Brentford
+paris_maghoma,3,45,5,94,0,2020-08-01,MID,Brentford
+myles_peart_harris,3,45,5,94,0,2021-07-23,MID,Brentford
+ryan_trevitt,3,45,5,94,0,2024-01-08,MID,Brentford
+yoane_wissa,4,75,5,94,0,2021-08-10,FWD,Brentford
+igor_thiago_nascimento_rodrigues,4,60,5,94,6,2024-07-01,FWD,Brentford
+iwan_morgan,4,45,5,94,0,,FWD,Brentford
+jason_steele,1,45,6,36,0,2018-07-01,GK,Brighton
+bart_verbruggen,1,45,6,36,2,2023-07-03,GK,Brighton
+tom_mcgill,1,40,6,36,0,2021-02-02,GK,Brighton
+carl_rushworth,1,40,6,36,0,2023-07-01,GK,Brighton
+kjell_scherpen,1,40,6,36,0,2021-07-16,GK,Brighton
+olivier_boscagli,2,45,6,36,0,2025-07-02,DEF,Brighton
+diego_coppola,2,45,6,36,0,2025-06-17,DEF,Brighton
+maxim_de_cuyper,2,45,6,36,2,2025-07-05,DEF,Brighton
+lewis_dunk,2,45,6,36,2,2009-07-01,DEF,Brighton
+pervis_estupinan_tenorio,2,45,6,36,0,2022-07-16,DEF,Brighton
+ferdi_kadioglu,2,45,6,36,0,2024-08-27,DEF,Brighton
+igor_julio_dos_santos_de_paulo,2,45,6,36,0,2023-07-26,DEF,Brighton
+tariq_lamptey,2,45,6,36,0,2020-01-31,DEF,Brighton
+jan_paul_van_hecke,2,45,6,36,2,2020-09-10,DEF,Brighton
+joel_veltman,2,45,6,36,0,2020-07-29,DEF,Brighton
+adam_webster,2,45,6,36,0,2019-08-03,DEF,Brighton
+eiran_cashin,2,40,6,36,0,2025-01-31,DEF,Brighton
+jacob_slater,2,40,6,36,0,,DEF,Brighton
+charlie_tasker,2,40,6,36,0,,DEF,Brighton
+mitoma_kaoru,3,65,6,36,2,2021-08-09,MID,Brighton
+georginio_rutter,3,60,6,36,6,2024-08-19,MID,Brighton
+solly_march,3,60,6,36,0,2012-07-01,MID,Brighton
+yankuba_minteh,3,60,6,36,3,2024-07-01,MID,Brighton
+julio_enciso_espinola,3,55,6,36,0,2022-06-17,MID,Brighton
+brajan_gruda,3,55,6,36,1,2024-08-14,MID,Brighton
+jack_hinshelwood,3,55,6,36,0,2022-12-30,MID,Brighton
+matt_o'riley,3,55,6,36,10,2024-08-26,MID,Brighton
+abdallah_sima,3,55,6,36,0,2021-08-30,MID,Brighton
+yasin_ayari,3,50,6,36,3,2023-01-30,MID,Brighton
+carlos_baleba,3,50,6,36,3,2023-08-29,MID,Brighton
+facundo_buonanotte,3,50,6,36,0,2023-01-01,MID,Brighton
+diego_gomez_amarilla,3,50,6,36,0,2025-01-01,MID,Brighton
+james_milner,3,50,6,36,1,2023-07-01,MID,Brighton
+jeremy_sarmiento_morante,3,50,6,36,0,2021-09-21,MID,Brighton
+tom_watson,3,50,6,36,0,2025-06-01,MID,Brighton
+mats_wieffer,3,50,6,36,4,2024-07-06,MID,Brighton
+malick_yalcouye,3,50,6,36,0,2024-07-12,MID,Brighton
+joe_knight,3,45,6,36,0,,MID,Brighton
+adrian_mazilu,3,45,6,36,0,,MID,Brighton
+andrew_moran,3,45,6,36,0,2021-08-23,MID,Brighton
+danny_welbeck,4,65,6,36,1,2020-10-18,FWD,Brighton
+evan_ferguson,4,55,6,36,0,2021-08-23,FWD,Brighton
+stefanos_tzimas,4,55,6,36,0,2025-02-03,FWD,Brighton
+charalampos_kostoulas,4,50,6,36,0,2025-07-01,FWD,Brighton
+robert_lynch_sanchez,1,50,7,8,8,2023-08-05,GK,Chelsea
+filip_jorgensen,1,45,7,8,0,2024-07-30,GK,Chelsea
+mike_penders,1,40,7,8,0,2024-08-27,GK,Chelsea
+gabriel_slonina,1,40,7,8,0,2022-08-02,GK,Chelsea
+marc_cucurella_saseta,2,60,7,8,8,2022-08-05,DEF,Chelsea
+reece_james,2,55,7,8,5,2019-05-15,DEF,Chelsea
+trevoh_chalobah,2,50,7,8,6,2018-02-16,DEF,Chelsea
+levi_samuels_colwill,2,50,7,8,0,2022-07-01,DEF,Chelsea
+malo_gusto,2,50,7,8,1,2023-01-28,DEF,Chelsea
+benoit_badiashile_mukinayi,2,45,7,8,0,2023-01-05,DEF,Chelsea
+wesley_fofana,2,45,7,8,0,2022-08-31,DEF,Chelsea
+mamadou_sarr,2,45,7,8,0,2025-06-09,DEF,Chelsea
+tosin_adarabioyo,2,45,7,8,0,2024-07-01,DEF,Chelsea
+josh_acheampong,2,40,7,8,9,2024-03-10,DEF,Chelsea
+aaron_anselmino,2,40,7,8,0,2024-08-08,DEF,Chelsea
+cole_palmer,3,105,7,8,3,2023-09-01,MID,Chelsea
+pedro_lomba_neto,3,70,7,8,3,2024-08-11,MID,Chelsea
+enzo_fernandez,3,65,7,8,3,2023-01-31,MID,Chelsea
+estevao_almeida_de_oliveira_goncalves,3,65,7,8,0,2025-07-14,MID,Chelsea
+jamie_bynoe_gittens,3,65,7,8,1,2025-07-05,MID,Chelsea
+christopher_nkunku,3,60,7,8,0,2023-07-01,MID,Chelsea
+moises_caicedo_corozo,3,55,7,8,5,2023-08-14,MID,Chelsea
+tyrique_george,3,50,7,8,0,2024-04-15,MID,Chelsea
+romeo_lavia,3,50,7,8,0,2023-08-18,MID,Chelsea
+mykhailo_mudryk,3,50,7,8,0,2023-01-15,MID,Chelsea
+andrey_nascimento_dos_santos,3,45,7,8,1,2023-01-07,MID,Chelsea
+dario_luis_essugo,3,45,7,8,0,2025-06-02,MID,Chelsea
+kendry_paez_andrade,3,45,7,8,0,,MID,Chelsea
+joao_pedro_junqueira_de_jesus,4,75,7,8,2,2025-07-02,FWD,Chelsea
+liam_delap,4,65,7,8,1,2025-06-04,FWD,Chelsea
+nicolas_jackson,4,65,7,8,0,2023-07-01,FWD,Chelsea
+jorrel_hato,2,50,7,8,0,2025-08-03,DEF,Chelsea
+dean_henderson,1,50,8,31,6,2023-08-31,GK,Crystal Palace
+walter_benitez,1,40,8,31,0,2025-07-01,GK,Crystal Palace
+remi_matthews,1,40,8,31,0,2021-07-13,GK,Crystal Palace
+daniel_munoz_mejia,2,55,8,31,5,2024-01-30,DEF,Crystal Palace
+maxence_lacroix,2,50,8,31,8,2024-08-30,DEF,Crystal Palace
+tyrick_mitchell,2,50,8,31,9,2019-12-15,DEF,Crystal Palace
+borna_sosa,2,50,8,31,0,2025-07-11,DEF,Crystal Palace
+marc_guehi,2,45,8,31,6,2021-07-18,DEF,Crystal Palace
+chris_richards,2,45,8,31,6,2022-07-27,DEF,Crystal Palace
+chadi_riad_dnanou,2,40,8,31,0,2024-07-02,DEF,Crystal Palace
+nathaniel_clyne,2,40,8,31,0,2020-10-14,DEF,Crystal Palace
+rob_holding,2,40,8,31,0,2023-09-01,DEF,Crystal Palace
+caleb_kporha,2,40,8,31,0,2024-07-30,DEF,Crystal Palace
+eberechi_eze,3,75,8,31,3,2020-08-28,MID,Crystal Palace
+ismaila_sarr,3,65,8,31,3,2024-08-01,MID,Crystal Palace
+cheick_doucoure,3,50,8,31,0,2022-07-11,MID,Crystal Palace
+romain_esse,3,50,8,31,0,2025-01-18,MID,Crystal Palace
+will_hughes,3,50,8,31,2,2021-08-28,MID,Crystal Palace
+daichi_kamada,3,50,8,31,0,2024-07-01,MID,Crystal Palace
+jefferson_lerma_solis,3,50,8,31,1,2023-07-01,MID,Crystal Palace
+adam_wharton,3,50,8,31,3,2024-02-01,MID,Crystal Palace
+asher_agbinone,3,45,8,31,0,2024-07-30,MID,Crystal Palace
+naouirou_ahamada,3,45,8,31,0,2023-01-31,MID,Crystal Palace
+justin_devenny,3,45,8,31,1,2024-03-13,MID,Crystal Palace
+malcolm_ebiowei,3,45,8,31,0,2022-07-01,MID,Crystal Palace
+jesurun_rak_sakyi,3,45,8,31,0,2021-04-09,MID,Crystal Palace
+matheus_franca_de_oliveira,3,45,8,31,0,2023-08-05,MID,Crystal Palace
+david_ozoh,3,45,8,31,0,2022-07-11,MID,Crystal Palace
+kaden_rodney,3,45,8,31,0,2022-07-08,MID,Crystal Palace
+franco_umeh_chibueze,3,45,8,31,0,2024-02-18,MID,Crystal Palace
+jean_philippe_mateta,4,75,8,31,1,2022-01-31,FWD,Crystal Palace
+eddie_nketiah,4,55,8,31,0,2024-08-30,FWD,Crystal Palace
+odsonne_edouard,4,50,8,31,0,2021-08-31,FWD,Crystal Palace
+zach_marsh,4,45,8,31,0,2023-07-18,FWD,Crystal Palace
+rio_cardines,3,45,8,31,0,2025-07-24,MID,Crystal Palace
+kiernan_dewsbury_hall,3,50,9,11,2,2025-08-06,MID,Everton
+jordan_pickford,1,55,9,11,2,2017-07-01,GK,Everton
+mark_travers,1,45,9,11,0,2025-07-15,GK,Everton
+harry_tyrer,1,40,9,11,0,2021-02-09,GK,Everton
+jarrad_branthwaite,2,55,9,11,0,2020-06-20,DEF,Everton
+james_tarkowski,2,55,9,11,4,2022-07-01,DEF,Everton
+vitalii_mykolenko,2,50,9,11,0,2022-01-01,DEF,Everton
+jake_o'brien,2,50,9,11,2,2024-07-30,DEF,Everton
+seamus_coleman,2,45,9,11,0,2009-02-02,DEF,Everton
+michael_keane,2,45,9,11,2,2017-07-03,DEF,Everton
+nathan_patterson,2,45,9,11,0,2022-01-04,DEF,Everton
+roman_dixon,2,40,9,11,0,,DEF,Everton
+reece_welch,2,40,9,11,0,,DEF,Everton
+iliman_ndiaye,3,65,9,11,2,2024-07-03,MID,Everton
+dwight_mcneil,3,60,9,11,0,2022-07-28,MID,Everton
+carlos_alcaraz_duran,3,55,9,11,1,2025-07-01,MID,Everton
+idrissa_gana_gueye,3,55,9,11,2,2022-09-01,MID,Everton
+james_garner,3,50,9,11,2,2022-09-01,MID,Everton
+tim_iroegbunam,3,50,9,11,2,2024-06-22,MID,Everton
+harrison_armstrong,3,45,9,11,0,2024-08-09,MID,Everton
+callum_bates,3,45,9,11,0,,MID,Everton
+coby_ebere,3,45,9,11,0,,MID,Everton
+isaac_heath,3,45,9,11,0,2025-02-07,MID,Everton
+jenson_metcalfe,3,45,9,11,0,,MID,Everton
+thierno_barry,4,60,9,11,1,2025-07-09,FWD,Everton
+norberto_bercique_gomes_betuncal,4,55,9,11,2,2023-08-29,FWD,Everton
+youssef_ramalho_chermiti,4,50,9,11,0,2023-08-11,FWD,Everton
+martin_sherif,4,45,9,11,0,,FWD,Everton
+jack_grealish,3,65,9,11,1,2025-08-12,MID,Everton
+tom_king,1,40,9,11,0,2025-08-15,GK,Everton
+adam_aznou,2,45,9,11,0,2025-07-29,DEF,Everton
+bernd_leno,1,50,10,54,3,2022-08-02,GK,Fulham
+steven_benda,1,40,10,54,0,2023-08-30,GK,Fulham
+antonee_robinson,2,50,10,54,0,2020-08-20,DEF,Fulham
+joachim_andersen,2,45,10,54,2,2024-08-23,DEF,Fulham
+calvin_bassey,2,45,10,54,1,2023-07-28,DEF,Fulham
+timothy_castagne,2,45,10,54,1,2023-08-29,DEF,Fulham
+issa_diop,2,45,10,54,0,2022-08-10,DEF,Fulham
+jorge_cuenca_barreno,2,45,10,54,2,2024-08-03,DEF,Fulham
+kenny_tete,2,45,10,54,2,2020-09-10,DEF,Fulham
+samuel_amissah,2,40,10,54,0,,DEF,Fulham
+alex_iwobi,3,65,10,54,2,2023-09-01,MID,Fulham
+emile_smith_rowe,3,60,10,54,1,2024-08-02,MID,Fulham
+adama_traore_diarra,3,55,10,54,1,2023-08-12,MID,Fulham
+andreas_hoelgebaum_pereira,3,55,10,54,0,2022-07-11,MID,Fulham
+ryan_sessegnon,3,55,10,54,0,2024-07-26,MID,Fulham
+harry_wilson,3,55,10,54,5,2021-07-24,MID,Fulham
+sander_berge,3,50,10,54,2,2024-08-22,MID,Fulham
+tom_cairney,3,50,10,54,0,2015-07-07,MID,Fulham
+sasa_lukic,3,50,10,54,2,2023-01-31,MID,Fulham
+martial_godo,3,45,10,54,0,2022-08-22,MID,Fulham
+luke_harris,3,45,10,54,0,2022-08-05,MID,Fulham
+josh_king,3,45,10,54,2,2024-02-02,MID,Fulham
+harrison_reed,3,45,10,54,0,2020-08-30,MID,Fulham
+raul_jimenez_rodriguez,4,65,10,54,2,2023-07-25,FWD,Fulham
+rodrigo_muniz_carvalho,4,55,10,54,7,2021-08-20,FWD,Fulham
+benjamin_lecomte,1,40,10,54,0,2025-07-26,GK,Fulham
+illan_meslier,1,45,11,2,0,2020-07-27,GK,Leeds
+alex_cairns,1,40,11,2,0,2024-07-08,GK,Leeds
+karl_darlow,1,40,11,2,0,2023-07-29,GK,Leeds
+jayden_bogle,2,45,11,2,6,2024-07-20,DEF,Leeds
+pascal_struijk,2,45,11,2,8,2018-04-12,DEF,Leeds
+jaka_bijol,2,40,11,2,0,2025-06-23,DEF,Leeds
+sebastiaan_bornauw,2,40,11,2,0,2025-07-01,DEF,Leeds
+sam_byram,2,40,11,2,0,2023-08-05,DEF,Leeds
+gabriel_gudmundsson,2,40,11,2,9,2025-07-08,DEF,Leeds
+joe_rodon,2,40,11,2,7,2024-07-02,DEF,Leeds
+isaac_schmidt,2,40,11,2,0,2024-08-30,DEF,Leeds
+brenden_aaronson,3,55,11,2,1,2022-07-01,MID,Leeds
+wilfried_gnonto,3,55,11,2,3,2022-09-01,MID,Leeds
+jack_harrison,3,55,11,2,1,2021-07-02,MID,Leeds
+daniel_james,3,55,11,2,3,2021-08-31,MID,Leeds
+ethan_ampadu,3,50,11,2,3,2023-07-19,MID,Leeds
+sam_greenwood,3,50,11,2,0,2021-01-09,MID,Leeds
+ilia_gruev,3,50,11,2,1,2023-08-31,MID,Leeds
+largie_ramazani,3,50,11,2,0,2024-08-22,MID,Leeds
+tanaka_ao,3,50,11,2,3,2024-08-30,MID,Leeds
+charlie_crew,3,45,11,2,0,2024-03-28,MID,Leeds
+joe_gelhardt,3,45,11,2,0,2021-02-07,MID,Leeds
+darko_gyabi,3,45,11,2,0,2022-07-04,MID,Leeds
+joel_piroe,4,55,11,2,2,2023-08-24,FWD,Leeds
+patrick_bamford,4,50,11,2,0,2018-07-31,FWD,Leeds
+mateo_joseph_fernandez_regatillo,4,50,11,2,0,2022-11-04,FWD,Leeds
+lukas_nmecha,4,50,11,2,5,2025-07-01,FWD,Leeds
+sean_longstaff,3,50,11,2,1,2025-07-18,MID,Leeds
+anton_stach,3,50,11,2,8,2025-07-22,MID,Leeds
+lucas_estella_perri,1,45,11,2,6,2025-07-26,GK,Leeds
+dominic_calvert_lewin,4,55,11,2,0,2025-08-15,FWD,Leeds
+alisson_becker,1,55,12,14,1,2018-07-19,GK,Liverpool
+giorgi_mamardashvili,1,45,12,14,0,2024-08-27,GK,Liverpool
+armin_pecsi,1,40,12,14,0,2025-06-07,GK,Liverpool
+freddie_woodman,1,40,12,14,0,2025-07-01,GK,Liverpool
+jeremie_frimpong,2,60,12,14,1,2025-06-01,DEF,Liverpool
+milos_kerkez,2,60,12,14,0,2025-06-26,DEF,Liverpool
+andrew_robertson,2,60,12,14,0,2017-07-21,DEF,Liverpool
+virgil_van_dijk,2,60,12,14,3,2018-01-01,DEF,Liverpool
+ibrahima_konate,2,55,12,14,1,2021-07-01,DEF,Liverpool
+conor_bradley,2,50,12,14,0,2023-09-25,DEF,Liverpool
+joe_gomez,2,50,12,14,1,2015-06-20,DEF,Liverpool
+konstantinos_tsimikas,2,50,12,14,0,2020-08-10,DEF,Liverpool
+amara_nallo,2,40,12,14,0,2024-02-27,DEF,Liverpool
+rhys_williams,2,40,12,14,0,2020-09-23,DEF,Liverpool
+calvin_ramsay,2,40,12,14,0,2022-06-19,DEF,Liverpool
+mohamed_salah,3,145,12,14,8,2017-07-01,MID,Liverpool
+florian_wirtz,3,85,12,14,2,2025-06-20,MID,Liverpool
+luis_diaz_marulanda,3,80,12,14,0,2022-01-30,MID,Liverpool
+cody_gakpo,3,75,12,14,7,2023-01-01,MID,Liverpool
+federico_chiesa,3,65,12,14,6,2024-08-29,MID,Liverpool
+alexis_mac_allister,3,65,12,14,5,2023-06-14,MID,Liverpool
+dominik_szoboszlai,3,65,12,14,2,2023-07-02,MID,Liverpool
+curtis_jones,3,55,12,14,1,2018-04-06,MID,Liverpool
+harvey_elliott,3,55,12,14,0,2019-07-28,MID,Liverpool
+ryan_gravenberch,3,55,12,14,0,2023-09-01,MID,Liverpool
+endo_wataru,3,50,12,14,4,2023-08-18,MID,Liverpool
+stefan_bajcetic_maquieira,3,45,12,14,0,2022-07-11,MID,Liverpool
+james_mcconnell,3,45,12,14,0,,MID,Liverpool
+tyler_morton,3,45,12,14,0,2021-07-22,MID,Liverpool
+trey_nyoni,3,45,12,14,0,2023-11-11,MID,Liverpool
+darwin_nunez_ribeiro,4,65,12,14,0,2022-06-14,FWD,Liverpool
+jayden_danns,4,45,12,14,0,,FWD,Liverpool
+hugo_ekitike,4,86,12,14,11,2025-07-23,FWD,Liverpool
+rio_ngumoha,3,45,12,14,0,2024-12-17,MID,Liverpool
+giovanni_leoni,2,50,12,14,0,2025-08-15,DEF,Liverpool
+james_trafford,1,50,13,43,7,2025-07-29,GK,Man City
+ederson_santana_de_moraes,1,55,13,43,0,2017-07-01,GK,Man City
+stefan_ortega_moreno,1,50,13,43,0,2022-07-01,GK,Man City
+marcus_bettinelli,1,40,13,43,0,2025-06-10,GK,Man City
+rayan_ait_nouri,2,60,13,43,9,2025-06-09,DEF,Man City
+josko_gvardiol,2,60,13,43,0,2023-08-05,DEF,Man City
+manuel_akanji,2,55,13,43,0,2022-09-01,DEF,Man City
+nathan_ake,2,55,13,43,0,2020-08-05,DEF,Man City
+abdukodir_khusanov,2,55,13,43,1,2025-01-20,DEF,Man City
+matheus_nunes,2,55,13,43,1,2023-09-01,DEF,Man City
+ruben_dos_santos_gato_alves_dias,2,55,13,43,6,2020-09-29,DEF,Man City
+john_stones,2,55,13,43,6,2016-08-09,DEF,Man City
+rico_lewis,2,50,13,43,11,2022-07-16,DEF,Man City
+nico_o'reilly,2,50,13,43,0,2022-12-16,DEF,Man City
+vitor_de_oliveira_nunes_dos_reis,2,50,13,43,0,2025-01-21,DEF,Man City
+omar_marmoush,3,85,13,43,1,2025-01-23,MID,Man City
+phil_foden,3,80,13,43,0,2016-12-05,MID,Man City
+savio_moreira_de_oliveira,3,70,13,43,0,2024-07-18,MID,Man City
+bernardo_mota_veiga_de_carvalho_e_silva,3,65,13,43,3,2017-07-01,MID,Man City
+rayan_cherki,3,65,13,43,6,2025-06-10,MID,Man City
+jeremy_doku,3,65,13,43,3,2023-08-24,MID,Man City
+ilkay_gundogan,3,65,13,43,0,2024-08-23,MID,Man City
+rodrigo_'rodri'_hernandez_cascante,3,65,13,43,0,2019-07-04,MID,Man City
+mateo_kovacic,3,60,13,43,0,2023-06-27,MID,Man City
+nico_gonzalez_iglesias,3,60,13,43,3,2025-02-03,MID,Man City
+oscar_bobb,3,55,13,43,6,2022-01-06,MID,Man City
+claudio_echeverri,3,55,13,43,0,2024-01-25,MID,Man City
+tijjani_reijnders,3,56,13,43,10,2025-06-10,MID,Man City
+sverre_nypan,3,50,13,43,0,2025-07-17,MID,Man City
+kalvin_phillips,3,50,13,43,0,2022-07-04,MID,Man City
+erling_haaland,4,140,13,43,13,2022-07-01,FWD,Man City
+bryan_mbeumo,3,80,14,1,2,2025-07-21,MID,Man Utd
+altay_bayindir,1,50,14,1,2,2023-09-01,GK,Man Utd
+andre_onana,1,50,14,1,0,2023-07-20,GK,Man Utd
+elyh_harrison,1,40,14,1,0,,GK,Man Utd
+tom_heaton,1,40,14,1,0,2021-07-02,GK,Man Utd
+dermot_mee,1,40,14,1,0,2023-07-24,GK,Man Utd
+matthijs_de_ligt,2,50,14,1,4,2024-08-13,DEF,Man Utd
+lisandro_martinez,2,50,14,1,0,2022-07-17,DEF,Man Utd
+noussair_mazraoui,2,50,14,1,0,2024-08-13,DEF,Man Utd
+diego_leon_blanco,2,45,14,1,0,2025-07-05,DEF,Man Utd
+diogo_dalot_teixeira,2,45,14,1,1,2018-06-08,DEF,Man Utd
+patrick_dorgu,2,45,14,1,1,2025-02-02,DEF,Man Utd
+harry_maguire,2,45,14,1,1,2019-08-05,DEF,Man Utd
+luke_shaw,2,45,14,1,2,2014-07-01,DEF,Man Utd
+leny_yoro,2,45,14,1,4,2024-07-19,DEF,Man Utd
+harry_amass,2,40,14,1,0,2024-04-06,DEF,Man Utd
+tyler_fredricson,2,40,14,1,0,2022-09-07,DEF,Man Utd
+ayden_heaven,2,40,14,1,0,2025-02-01,DEF,Man Utd
+tyrell_malacia,2,40,14,1,0,2022-07-05,DEF,Man Utd
+bruno_borges_fernandes,3,90,14,1,2,2020-01-30,MID,Man Utd
+matheus_santos_carneiro_da_cunha,3,80,14,1,2,2025-06-01,MID,Man Utd
+marcus_rashford,3,70,14,1,0,2015-07-01,MID,Man Utd
+amad_diallo,3,65,14,1,1,2021-01-07,MID,Man Utd
+alejandro_garnacho_ferreyra,3,65,14,1,0,2022-04-15,MID,Man Utd
+antony_dos_santos,3,60,14,1,0,2022-09-01,MID,Man Utd
+mason_mount,3,60,14,1,2,2023-07-05,MID,Man Utd
+jadon_sancho,3,60,14,1,0,2021-07-23,MID,Man Utd
+carlos_henrique_casimiro,3,55,14,1,2,2022-08-22,MID,Man Utd
+kobbie_mainoo,3,50,14,1,0,2022-10-15,MID,Man Utd
+manuel_ugarte_ribeiro,3,50,14,1,1,2024-08-30,MID,Man Utd
+toby_collyer,3,45,14,1,0,2023-07-01,MID,Man Utd
+jayce_fitzgerald,3,45,14,1,0,,MID,Man Utd
+jack_fletcher,3,45,14,1,0,2024-07-12,MID,Man Utd
+sekou_kone,3,45,14,1,0,2025-02-15,MID,Man Utd
+jack_moorhouse,3,45,14,1,0,,MID,Man Utd
+rasmus_hojlund,4,65,14,1,0,2023-08-05,FWD,Man Utd
+joshua_zirkzee,4,60,14,1,0,2024-07-17,FWD,Man Utd
+chido_obi,4,45,14,1,0,2025-02-15,FWD,Man Utd
+ethan_wheatley,4,45,14,1,0,2024-04-12,FWD,Man Utd
+benjamin_sesko,4,75,14,1,1,2025-08-09,FWD,Man Utd
+jacob_ramsey,3,55,15,4,0,2025-08-17,MID,Newcastle
+nick_pope,1,50,15,4,9,2022-06-23,GK,Newcastle
+mark_gillespie,1,40,15,4,0,2020-07-27,GK,Newcastle
+odysseas_vlachodimos,1,40,15,4,0,2024-07-01,GK,Newcastle
+lewis_hall,2,55,15,4,0,2024-07-01,DEF,Newcastle
+fabian_schar,2,55,15,4,8,2018-07-26,DEF,Newcastle
+sven_botman,2,50,15,4,0,2022-06-28,DEF,Newcastle
+dan_burn,2,50,15,4,9,2022-01-31,DEF,Newcastle
+tino_livramento,2,50,15,4,9,2023-08-08,DEF,Newcastle
+kieran_trippier,2,50,15,4,6,2022-01-07,DEF,Newcastle
+emil_krafth,2,45,15,4,0,2019-08-08,DEF,Newcastle
+jamaal_lascelles,2,45,15,4,0,2014-08-04,DEF,Newcastle
+alex_murphy,2,40,15,4,0,2023-07-19,DEF,Newcastle
+harrison_ashby,2,40,15,4,0,2023-01-31,DEF,Newcastle
+miodrag_pivas,2,40,15,4,0,,DEF,Newcastle
+matt_targett,2,40,15,4,0,2022-07-01,DEF,Newcastle
+anthony_gordon,3,75,15,4,3,2023-01-29,MID,Newcastle
+anthony_elanga,3,70,15,4,3,2025-07-11,MID,Newcastle
+harvey_barnes,3,65,15,4,3,2023-07-23,MID,Newcastle
+bruno_guimaraes_rodriguez_moura,3,65,15,4,3,2022-01-30,MID,Newcastle
+jacob_murphy,3,65,15,4,1,2017-07-19,MID,Newcastle
+joelinton_cassio_apolinario_de_lira,3,60,15,4,2,2019-07-24,MID,Newcastle
+sandro_tonali,3,55,15,4,3,2023-07-03,MID,Newcastle
+antonito_cordero_campillo,3,50,15,4,0,2025-07-01,MID,Newcastle
+joe_willock,3,50,15,4,0,2021-08-13,MID,Newcastle
+isaac_hayden,3,45,15,4,0,2016-07-11,MID,Newcastle
+garang_kuol,3,45,15,4,0,2023-01-01,MID,Newcastle
+lewis_miley,3,45,15,4,1,2023-02-01,MID,Newcastle
+joe_white,3,45,15,4,0,2024-01-29,MID,Newcastle
+alexander_isak,4,105,15,4,0,2022-08-26,FWD,Newcastle
+william_osula,4,55,15,4,1,2024-08-08,FWD,Newcastle
+sean_neave,4,45,15,4,0,2025-02-07,FWD,Newcastle
+aaron_ramsdale,1,50,15,4,0,2025-08-02,GK,Newcastle
+malick_thiaw,2,50,15,4,0,2025-08-12,DEF,Newcastle
+seung_soo_park,3,45,15,4,0,2025-07-26,MID,Newcastle
+james_mcatee,3,55,16,17,0,2025-08-16,MID,Nott'm Forest
+matz_sels,1,50,16,17,2,2024-02-01,GK,Nott'm Forest
+carlos_miguel_dos_santos_pereira,1,40,16,17,0,2024-07-09,GK,Nott'm Forest
+matt_turner,1,40,16,17,0,2023-08-09,GK,Nott'm Forest
+nikola_milenkovic,2,55,16,17,2,2024-07-18,DEF,Nott'm Forest
+murillo_costa_dos_santos,2,55,16,17,2,2023-08-31,DEF,Nott'm Forest
+ola_aina,2,50,16,17,4,2023-07-22,DEF,Nott'm Forest
+neco_williams,2,50,16,17,1,2022-07-11,DEF,Nott'm Forest
+david_mota_veiga_teixeira_do_carmo,2,45,16,17,0,2024-08-25,DEF,Nott'm Forest
+jair_paula_da_cunha_filho,2,45,16,17,0,2025-07-11,DEF,Nott'm Forest
+felipe_rodrigues_da_silva,2,45,16,17,0,2024-08-30,DEF,Nott'm Forest
+omar_richards,2,45,16,17,0,2022-07-10,DEF,Nott'm Forest
+zach_abbott,2,40,16,17,0,2022-08-22,DEF,Nott'm Forest
+willy_boly,2,40,16,17,0,2022-09-01,DEF,Nott'm Forest
+morgan_gibbs_white,3,75,16,17,5,2022-08-19,MID,Nott'm Forest
+callum_hudson_odoi,3,60,16,17,2,2023-09-01,MID,Nott'm Forest
+elliot_anderson,3,55,16,17,6,2024-07-01,MID,Nott'm Forest
+joao_pedro_ferreira_da_silva,3,55,16,17,1,2024-08-01,MID,Nott'm Forest
+nicolas_dominguez,3,50,16,17,0,2023-09-01,MID,Nott'm Forest
+lewis_o'brien,3,50,16,17,0,2022-07-20,MID,Nott'm Forest
+ibrahim_sangare,3,50,16,17,2,2023-09-01,MID,Nott'm Forest
+ryan_yates,3,50,16,17,1,2018-08-01,MID,Nott'm Forest
+eric_da_silva_moreira,3,45,16,17,0,2024-07-01,MID,Nott'm Forest
+marko_stamenic,3,45,16,17,0,2024-06-27,MID,Nott'm Forest
+chris_wood,4,76,16,17,13,2023-07-01,FWD,Nott'm Forest
+igor_jesus_maciel_da_cruz,4,60,16,17,1,2025-07-05,FWD,Nott'm Forest
+taiwo_awoniyi,4,55,16,17,0,2022-06-25,FWD,Nott'm Forest
+dan_ndoye,3,60,16,17,9,2025-07-31,MID,Nott'm Forest
+angus_gunn,1,40,16,17,0,2025-08-06,GK,Nott'm Forest
+omari_hutchinson,3,55,16,17,0,2025-08-16,MID,Nott'm Forest
+arnaud_kalimuendo,4,60,16,17,0,2025-08-18,FWD,Nott'm Forest
+marc_guiu_paz,4,45,17,56,0,2025-08-06,FWD,Sunderland
+anthony_patterson,1,45,17,56,0,2018-10-09,GK,Sunderland
+simon_moore,1,40,17,56,0,2024-07-01,GK,Sunderland
+blondy_nna_noukeu,1,40,17,56,0,2024-08-02,GK,Sunderland
+daniel_ballard,2,45,17,56,17,2022-07-01,DEF,Sunderland
+trai_hume,2,45,17,56,6,2022-01-04,DEF,Sunderland
+aji_alese,2,40,17,56,0,2022-07-15,DEF,Sunderland
+joe_anderson,2,40,17,56,0,2023-01-31,DEF,Sunderland
+dennis_cirkin,2,40,17,56,0,2021-08-11,DEF,Sunderland
+leo_fuhr_hjelde,2,40,17,56,0,2024-01-30,DEF,Sunderland
+niall_huggins,2,40,17,56,0,2021-08-20,DEF,Sunderland
+zak_johnson,2,40,17,56,0,2021-10-12,DEF,Sunderland
+luke_o'nien,2,40,17,56,0,2018-07-30,DEF,Sunderland
+timothee_pembele,2,40,17,56,0,2023-09-01,DEF,Sunderland
+reinildo_mandava,2,40,17,56,6,2025-07-08,DEF,Sunderland
+jenson_seelt,2,40,17,56,1,2023-07-01,DEF,Sunderland
+simon_adingra,3,55,17,56,6,2025-07-10,MID,Sunderland
+habib_diarra,3,55,17,56,3,2025-07-01,MID,Sunderland
+patrick_roberts,3,55,17,56,0,2022-01-21,MID,Sunderland
+milan_aleksic,3,50,17,56,0,2024-08-30,MID,Sunderland
+enzo_le_fee,3,50,17,56,1,2025-07-01,MID,Sunderland
+romaine_mundle,3,50,17,56,0,2024-02-01,MID,Sunderland
+dan_neil,3,50,17,56,0,2018-11-01,MID,Sunderland
+ian_poveda_ocampo,3,50,17,56,0,2024-07-24,MID,Sunderland
+chris_rigg,3,50,17,56,1,2022-12-31,MID,Sunderland
+noah_sadiki,3,50,17,56,3,2025-07-04,MID,Sunderland
+chemsdine_talbi,3,50,17,56,6,2025-07-09,MID,Sunderland
+abdoullah_ba,3,45,17,56,0,2022-08-31,MID,Sunderland
+alan_browne,3,45,17,56,0,2024-07-11,MID,Sunderland
+pierre_ekwah_elimby,3,45,17,56,0,2023-01-23,MID,Sunderland
+harrison_jones,3,45,17,56,0,2024-01-01,MID,Sunderland
+jay_matete,3,45,17,56,0,2022-01-31,MID,Sunderland
+nectarios_triantis,3,45,17,56,0,2023-07-01,MID,Sunderland
+wilson_isidor,4,55,17,56,5,2025-02-01,FWD,Sunderland
+eliezer_mayenda_dossou,4,55,17,56,8,2023-07-28,FWD,Sunderland
+ahmed_abdullahi,4,45,17,56,0,2024-08-31,FWD,Sunderland
+luis_hemir_silva_semedo,4,45,17,56,0,2023-07-01,FWD,Sunderland
+nazarii_rusyn,4,45,17,56,0,2023-09-01,FWD,Sunderland
+granit_xhaka,3,50,17,56,3,2025-07-30,MID,Sunderland
+robin_roefs,1,45,17,56,8,2025-08-01,GK,Sunderland
+arthur_masuaku,2,40,17,56,0,2025-08-10,DEF,Sunderland
+omar_alderete,2,40,17,56,4,2025-08-12,DEF,Sunderland
+nordi_mukiele,2,40,17,56,0,2025-08-17,DEF,Sunderland
+guglielmo_vicario,1,50,18,6,9,2023-07-01,GK,Spurs
+brandon_austin,1,40,18,6,0,2017-07-22,GK,Spurs
+antonin_kinsky,1,40,18,6,0,2025-01-05,GK,Spurs
+pedro_porro_sauceda,2,55,18,6,6,2023-07-01,DEF,Spurs
+cristian_romero,2,50,18,6,6,2022-08-30,DEF,Spurs
+kevin_danso,2,45,18,6,0,2025-07-01,DEF,Spurs
+ben_davies,2,45,18,6,0,2014-07-23,DEF,Spurs
+radu_dragusin,2,45,18,6,0,2024-01-11,DEF,Spurs
+djed_spence,2,45,18,6,6,2022-07-19,DEF,Spurs
+destiny_udogie,2,45,18,6,0,2022-08-16,DEF,Spurs
+micky_van_de_ven,2,45,18,6,6,2023-08-08,DEF,Spurs
+ashley_phillips,2,40,18,6,0,2023-08-05,DEF,Spurs
+takai_kota,2,40,18,6,0,2025-07-08,DEF,Spurs
+luka_vuskovic,2,40,18,6,0,2025-06-01,DEF,Spurs
+son_heung_min,3,85,18,6,0,2015-08-28,MID,Spurs
+brennan_johnson,3,70,18,6,8,2023-09-01,MID,Spurs
+james_maddison,3,70,18,6,0,2023-06-28,MID,Spurs
+mohammed_kudus,3,65,18,6,10,2025-07-10,MID,Spurs
+dejan_kulusevski,3,65,18,6,0,2023-07-01,MID,Spurs
+mathys_tel,3,65,18,6,1,2025-07-01,MID,Spurs
+rodrigo_bentancur,3,55,18,6,1,2022-01-31,MID,Spurs
+lucas_bergvall,3,55,18,6,3,2024-07-01,MID,Spurs
+yves_bissouma,3,55,18,6,0,2022-06-17,MID,Spurs
+wilson_odobert,3,55,18,6,1,2024-08-16,MID,Spurs
+manor_solomon,3,55,18,6,0,2023-07-11,MID,Spurs
+bryan_gil_salvatierra,3,50,18,6,0,2021-07-26,MID,Spurs
+archie_gray,3,50,18,6,3,2024-07-02,MID,Spurs
+mikey_moore,3,50,18,6,0,2024-05-01,MID,Spurs
+pape_matar_sarr,3,50,18,6,6,2021-08-27,MID,Spurs
+yang_min_hyeok,3,45,18,6,0,2025-01-01,MID,Spurs
+callum_olusesi,3,45,18,6,0,2024-11-06,MID,Spurs
+dominic_solanke_mitchell,4,75,18,6,1,2024-08-10,FWD,Spurs
+richarlison_de_andrade,4,65,18,6,13,2022-07-01,FWD,Spurs
+will_lankshear,4,45,18,6,0,2022-12-08,FWD,Spurs
+dane_scarlett,4,45,18,6,0,2020-08-21,FWD,Spurs
+joao_maria_lobo_alves_palhares_costa_palhinha_goncalves,3,55,18,6,1,2025-08-03,MID,Spurs
+alphonse_areola,1,45,19,21,0,2022-07-01,GK,West Ham
+wes_foderingham,1,40,19,21,0,2024-07-01,GK,West Ham
+krisztian_hegyi,1,40,19,21,0,2022-08-24,GK,West Ham
+el_hadji_malick_diouf,2,45,19,21,1,2025-07-15,DEF,West Ham
+emerson_palmieri_dos_santos,2,45,19,21,0,2022-08-23,DEF,West Ham
+maximilian_kilman,2,45,19,21,0,2024-07-05,DEF,West Ham
+konstantinos_mavropanos,2,45,19,21,0,2023-08-22,DEF,West Ham
+nayef_aguerd,2,45,19,21,1,2022-06-21,DEF,West Ham
+ollie_scarles,2,45,19,21,0,2022-10-01,DEF,West Ham
+jean_clair_todibo,2,45,19,21,1,2025-07-01,DEF,West Ham
+aaron_wan_bissaka,2,45,19,21,1,2024-08-13,DEF,West Ham
+kaelan_casey,2,40,19,21,0,2022-11-01,DEF,West Ham
+lucas_tolentino_coelho_de_lima,3,60,19,21,2,2022-08-29,MID,West Ham
+tomas_soucek,3,60,19,21,1,2020-07-28,MID,West Ham
+james_ward_prowse,3,60,19,21,2,2023-08-14,MID,West Ham
+crysencio_summerville,3,55,19,21,0,2024-08-03,MID,West Ham
+edson_alvarez_velazquez,3,50,19,21,0,2023-08-10,MID,West Ham
+maxwel_cornet,3,50,19,21,0,2022-08-07,MID,West Ham
+guido_rodriguez,3,50,19,21,2,2024-08-06,MID,West Ham
+luis_guilherme_lira_dos_santos,3,50,19,21,0,2024-06-14,MID,West Ham
+george_earthy,3,45,19,21,0,2023-07-14,MID,West Ham
+andy_irving,3,45,19,21,1,2023-08-31,MID,West Ham
+lewis_orford,3,45,19,21,0,2022-11-01,MID,West Ham
+freddie_potts,3,45,19,21,0,2021-12-08,MID,West Ham
+jarrod_bowen,4,80,19,21,2,2020-01-31,FWD,West Ham
+niclas_fullkrug,4,60,19,21,2,2024-08-05,FWD,West Ham
+callum_marshall,4,45,19,21,0,2023-09-26,FWD,West Ham
+kyle_walker_peters,2,45,19,21,0,2025-07-20,DEF,West Ham
+callum_wilson,4,60,19,21,1,2025-08-02,FWD,West Ham
+mads_hermansen,1,45,19,21,1,2025-08-09,GK,West Ham
+sam_johnstone,1,45,20,39,0,2024-08-30,GK,Wolves
+jose_malheiro_de_sa,1,45,20,39,0,2021-07-15,GK,Wolves
+daniel_bentley,1,40,20,39,0,2023-01-25,GK,Wolves
+emmanuel_agbadou,2,45,20,39,0,2025-01-09,DEF,Wolves
+matt_doherty,2,45,20,39,-1,2023-07-20,DEF,Wolves
+hugo_bueno_lopez,2,45,20,39,1,2021-01-29,DEF,Wolves
+yerson_mosquera_valdelamar,2,45,20,39,0,2021-06-17,DEF,Wolves
+rodrigo_martins_gomes,2,45,20,39,1,2024-07-01,DEF,Wolves
+santiago_ignacio_bueno,2,45,20,39,0,2023-08-31,DEF,Wolves
+toti_gomes,2,45,20,39,0,2022-01-14,DEF,Wolves
+ki_jana_hoever,2,40,20,39,1,2020-09-19,DEF,Wolves
+bastien_meupiyou_menadjou,2,40,20,39,0,2024-08-29,DEF,Wolves
+pedro_cardoso_de_lima,2,40,20,39,0,2024-07-02,DEF,Wolves
+alfie_pond,2,40,20,39,0,,DEF,Wolves
+hwang_hee_chan,3,60,20,39,1,2022-07-01,MID,Wolves
+andre_trindade_da_costa_neto,3,55,20,39,4,2024-08-30,MID,Wolves
+jean_ricner_bellegarde,3,55,20,39,2,2023-09-01,MID,Wolves
+fer_lopez_gonzalez,3,55,20,39,1,2025-06-20,MID,Wolves
+joao_victor_gomes_da_silva,3,55,20,39,2,2023-01-30,MID,Wolves
+goncalo_manuel_ganchinho_guedes,3,55,20,39,0,2022-08-08,MID,Wolves
+marshall_munetsi,3,55,20,39,2,2025-02-03,MID,Wolves
+boubacar_traore,3,50,20,39,0,2023-07-01,MID,Wolves
+tawanda_chirewa,3,45,20,39,0,2023-12-01,MID,Wolves
+tom_edozie,3,45,20,39,0,,MID,Wolves
+enso_gonzalez_medina,3,45,20,39,0,2023-08-31,MID,Wolves
+joe_hodge,3,45,20,39,0,,MID,Wolves
+jorgen_strand_larsen,4,65,20,39,2,2025-07-01,FWD,Wolves
+fabio_soares_silva,4,50,20,39,0,2020-09-05,FWD,Wolves
+sasa_kalajdzic,4,50,20,39,0,2022-08-31,FWD,Wolves
+leon_chiwome,4,45,20,39,0,,FWD,Wolves
+nathan_fraser,4,45,20,39,0,,FWD,Wolves
+jhon_arias,3,55,20,39,1,2025-07-24,MID,Wolves
+david_moller_wolfe,2,45,20,39,1,2025-08-02,DEF,Wolves
+jackson_tchatchoua,2,45,20,39,0,2025-08-19,DEF,Wolves
