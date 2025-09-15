@@ -74,8 +74,8 @@ def merge_lag_player_ewma(ewma_gw_df_players, ewma_gw_df_teams, year):
     ewma_gw_df = ewma_gw_df.merge(ewma_gw_df_opponent_team, on=['opponent_team_name', 'gw'], how='left')
     return ewma_gw_df
 
-def make_ewma_features_df(year, alpha):
-    gw_df = get_dfs(year)
+def make_ewma_features_df(gw_df, year, alpha):
+    # gw_df = get_dfs(year)
     gw_df = add_goals(gw_df)
     gw_df = clean_name_in_index(gw_df)
 
