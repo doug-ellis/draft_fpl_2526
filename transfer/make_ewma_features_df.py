@@ -10,7 +10,7 @@ def get_dfs(year):
         gw_df['gw'] = i
         gw_df_list.append(gw_df)
 
-        gw_df = pd.concat(gw_df_list)
+    gw_df = pd.concat(gw_df_list)
     return gw_df
     
 def add_goals(gw_df):
