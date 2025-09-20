@@ -45,7 +45,7 @@ def merge_ewma(ewma_gw_df, gw_df, merge_cols):
     return ewma_gw_df_merge
 
 def get_teams_df(gw_df):
-    gw_df_teams = gw_df[['team', 'gw', 'team_goals']]
+    gw_df_teams = gw_df[['team', 'gw', 'team_goals', 'team_points']]
     gw_df_teams = gw_df_teams.groupby(['team', 'gw']).first().reset_index()
     return gw_df_teams
 
@@ -66,11 +66,13 @@ def lag_feature(ewma_gw_df, feature):
 def merge_lag_player_ewma(ewma_gw_df_players, ewma_gw_df_teams, year):
     teamcode_dict = get_teamcodes(year)
     ewma_gw_df_players['opponent_team_name'] = ewma_gw_df_players['opponent_team'].map(teamcode_dict)
-    ewma_gw_df_opponent_team = ewma_gw_df_teams.rename(columns={'team': 'opponent_team_name', 
-                                                               'ewma_team_goals': 'ewma_nw_opponent_goals'})
     ewma_gw_df = ewma_gw_df_players.merge(ewma_gw_df_teams, on=['team', 'gw'], how='left')
     ewma_gw_df['nw_total_points'] = lag_feature(ewma_gw_df, 'total_points')
     ewma_gw_df['nw_opponent'] = lag_feature(ewma_gw_df, 'opponent_team_name')
+
+    ewma_gw_df_opponent_team = ewma_gw_df_teams.rename(columns={'team': 'opponent_team_name', 
+                                                            'ewma_team_goals': 'ewma_nw_opponent_goals',
+                                                            'ewma_team_points': 'ewma_nw_opponent_points'})
     ewma_gw_df = ewma_gw_df.merge(ewma_gw_df_opponent_team, on=['opponent_team_name', 'gw'], how='left')
     return ewma_gw_df
 
@@ -85,9 +87,10 @@ def make_ewma_features_df(gw_df, year, alpha):
     ewma_gw_df_players = ewma(gw_df, 'full_name', player_value_cols, alpha, {'total_points': 'ewma_total_points'}, merge_cols_players)
 
     gw_df_teams = get_teams_df(gw_df)
-    team_value_cols = ['team_goals']
+    team_value_cols = ['team_goals', 'team_points']
     merge_cols_teams = ['team', 'gw']
-    ewma_gw_df_teams = ewma(gw_df_teams, 'team', team_value_cols, alpha, {'team_goals': 'ewma_team_goals'}, merge_cols_teams)
+    ewma_gw_df_teams = ewma(gw_df_teams, 'team', team_value_cols, alpha, {'team_goals': 'ewma_team_goals',
+                                                                          'team_points': 'ewma_team_points'}, merge_cols_teams)
 
     ewma_merge_lag = merge_lag_player_ewma(ewma_gw_df_players, ewma_gw_df_teams, year)
     return ewma_merge_lag
