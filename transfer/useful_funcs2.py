@@ -1,19 +1,16 @@
 import pandas as pd
 import unidecode
 
+def combine_names(first_name, second_name):
+    full_name = first_name + '_' + second_name    
+    return full_name
+
 def clean_name(name):
     name = name.replace(" ", "_")
     name = name.replace("-", "_")
     name = unidecode.unidecode(name)
     return name.strip().lower()
 
-def combine_clean_names(first_name, second_name):
-    full_name = first_name + '_' + second_name
-    full_name = full_name.apply(clean_name)
-    
-    return full_name
-
-# Add team goals and (and team points?)
 def get_team_goals(was_home, team_h_score, team_a_score):
     if was_home:
         return team_h_score
@@ -36,3 +33,11 @@ def get_opponent_points(team_points):
         return 3
     else:
         return 1
+
+
+
+def clean_name2(name, separator):
+    name = name.replace(" ", separator)
+    name = name.replace("-", separator)
+    name = unidecode.unidecode(name)
+    return name.strip().lower()
