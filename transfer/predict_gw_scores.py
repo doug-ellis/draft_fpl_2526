@@ -37,6 +37,22 @@ def train_full_model(training_df, features, prediction_df):
     pred_df = predict_scores(prediction_df.dropna(), features, model_dict)
     return pred_df
 
+def merge_ownership_data(pred_df):
+    league_url = 'https://draft.premierleague.com/api/league/19188/element-status'
+    r = requests.get(league_url).json()
+    ownership_df = pd.json_normalize(r['element_status'])
+
+    url = 'https://draft.premierleague.com/api/bootstrap-static'
+    req = requests.get(url).json()
+    players_df = pd.json_normalize(req['elements'])
+    players_df['full_name'] = combine_names(players_df['first_name'], players_df['second_name']).apply(clean_name)
+    merge_name_df = players_df[['id', 'full_name']]
+    ownership_df_name = ownership_df.merge(merge_name_df, how='left', left_on='element', right_on='id')
+    ownership_df_to_merge = ownership_df_name[['full_name', 'owner']]
+
+    pred_df_owners = pred_df.merge(ownership_df_to_merge, on='full_name')
+    return pred_df_owners
+
 def get_params():
     training_year = 25
     training_n_gws = 38
@@ -58,7 +74,10 @@ def main():
     test_model(training_df, features)
     prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
     pred_df = train_full_model(training_df, features, prediction_df)
+    pred_df = merge_ownership_data(pred_df)
+    pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
     pred_df.to_csv(output, index=False)
+    pred_df_simple.to_csv(f'{output}_simple.csv', index=False)
 
 if __name__ == "__main__":
     main()
