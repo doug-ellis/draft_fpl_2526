@@ -13,16 +13,6 @@ def import_data_from_vastaav(year, n_gws):
     gw_df = pd.concat(gw_df_list)
     return gw_df.reset_index()
 
-def combine_names(first_name, second_name):
-    full_name = first_name + '_' + second_name    
-    return full_name
-
-def clean_name(name):
-    name = name.replace(" ", "_")
-    name = name.replace("-", "_")
-    name = unidecode.unidecode(name)
-    return name.strip().lower()
-
 def get_team_goals(was_home, team_h_score, team_a_score):
     if was_home:
         return team_h_score
@@ -52,6 +42,16 @@ def add_team_data(gw_df):
     gw_df['team_points'] = gw_df.apply(lambda row: get_team_points(row['was_home'], row['team_h_score'], row['team_a_score']), axis=1)
     gw_df['opponent_points'] = gw_df['team_points'].apply(get_opponent_points)
     return gw_df
+
+def combine_names(first_name, second_name):
+    full_name = first_name + '_' + second_name    
+    return full_name
+
+def clean_name(name):
+    name = name.replace(" ", "_")
+    name = name.replace("-", "_")
+    name = unidecode.unidecode(name)
+    return name.strip().lower()
 
 def ewma(gw_df, groupby_col, value_cols, alpha, rename_dict, remerge_cols):
     # Ensure the DataFrame is sorted by 'full_name' and 'gw'
@@ -85,8 +85,8 @@ def merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year):
     ewma_gw_df = ewma_gw_df_players.merge(ewma_gw_df_teams, on=['team', 'gw'], how='left')
 
     ewma_gw_df_opponent_team = ewma_gw_df_teams.rename(columns={'team': 'opponent_team_name', 
-                                                            'ewma_team_goals': 'ewma_nw_opponent_goals',
-                                                            'ewma_team_points': 'ewma_nw_opponent_points'})
+                                                            'ewma_team_goals': 'ewma_team_goals_nw_opponent',
+                                                            'ewma_team_points': 'ewma_team_points_nw_opponent'})
     ewma_gw_df = ewma_gw_df.merge(ewma_gw_df_opponent_team, on=['opponent_team_name', 'gw'], how='left')
     return ewma_gw_df
 
@@ -122,14 +122,9 @@ def get_ewma_df(year, gw, ewma_alpha):
     ewma_gw_df_teams = ewma(gw_df_teams, 'team', team_value_cols, ewma_alpha, {'team_goals': 'ewma_team_goals',
                                                                             'team_points': 'ewma_team_points'}, merge_cols_teams)
     merged_ewma_df = merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year)
-
     return merged_ewma_df
 
 def lag_data_for_training(merged_ewma_df):
-    merged_ewma_df['nw_total_points'] = lag_feature(merged_ewma_df, 'total_points')
-    merged_ewma_df['nw_opponent'] = lag_feature(merged_ewma_df, 'opponent_team_name')
-
+    merged_ewma_df['total_points_nw'] = lag_feature(merged_ewma_df, 'total_points')
+    merged_ewma_df['opponent_nw'] = lag_feature(merged_ewma_df, 'opponent_team_name')
     return merged_ewma_df
-
-    # Next time: make new .py for like training/testing model
-    # Import these funcs, run get ewma_df, then lag features for training/testing, or dont lag features for pred

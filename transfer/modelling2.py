@@ -1,0 +1,40 @@
+import requests
+import pandas as pd
+from wrangle_data2 import *
+from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+def evaluate_model(X, y, model):
+    y_pred = model.predict(X)
+    mae = mean_absolute_error(y, y_pred)
+    rmse = root_mean_squared_error(y, y_pred)
+    r2 = r2_score(y, y_pred)
+    return mae, rmse, r2
+
+def create_model(training_df, features, model, test):
+    model_dict = {}
+    rmse_dict = {}
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        model = model
+        training_df_pos = training_df.query('position==@pos')
+        X = training_df_pos[features]
+        y = training_df_pos['total_points_nw']
+
+        if test is True:
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+            model_dict[pos] = model.fit(X_train, y_train)
+            mae, rmse, r2 = evaluate_model(X_test, y_test, model_dict[pos])
+            rmse_dict[pos] = rmse
+        else:
+            model_dict[pos] = model.fit(X, y)
+            rmse_dict[pos] = None
+    return model_dict, rmse_dict
+
+def predict_scores(prediction_df, features, model_dict):
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        prediction_df_pos = prediction_df.query('position==@pos')
+        X_pred = prediction_df_pos[features]
+        prediction_df.loc[prediction_df['position']==pos, 'predicted_points'] = model_dict[pos].predict(X_pred)
+    return prediction_df
