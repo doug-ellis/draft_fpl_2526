@@ -57,7 +57,7 @@ def get_params():
     training_year = 25
     training_n_gws = 38
     pred_year = 26
-    pred_gw = 5
+    pred_gw = 6
     alpha = 0.3
     features = [
         'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
@@ -65,7 +65,7 @@ def get_params():
         'minutes', 'ewma_total_points', 'ewma_team_goals', 'ewma_team_points',
         'ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'
         ]
-    output = 'predicted_gw5.csv'
+    output = f'transfer/outputs/predicted_gw{pred_gw}'
     return training_year, training_n_gws, pred_year, pred_gw, alpha, features, output
 
 def main():
@@ -76,7 +76,7 @@ def main():
     pred_df = train_full_model(training_df, features, prediction_df)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
-    pred_df.to_csv(output, index=False)
+    pred_df.to_csv(f"{output}.csv", index=False)
     pred_df_simple.to_csv(f'{output}_simple.csv', index=False)
 
 if __name__ == "__main__":
