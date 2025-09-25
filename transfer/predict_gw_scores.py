@@ -4,6 +4,7 @@ import requests
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
+import xgboost as xgb
 
 def get_training_df(year, n_gws, alpha):
     gw_df = get_ewma_df(year, n_gws, alpha)
