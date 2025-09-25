@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from wrangle_data_funcs import *
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -12,11 +13,11 @@ def evaluate_model(X, y, model):
     r2 = r2_score(y, y_pred)
     return mae, rmse, r2
 
-def create_model(training_df, features, model, test):
+def create_model(training_df, features, model_func, test):
     model_dict = {}
     rmse_dict = {}
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        model = model
+        model = LinearRegression()
         training_df_pos = training_df.query('position==@pos')
         X = training_df_pos[features]
         y = training_df_pos['total_points_nw']

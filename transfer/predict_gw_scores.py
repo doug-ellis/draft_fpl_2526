@@ -30,12 +30,12 @@ def get_prediction_df(year, gw, alpha):
     prediction_df = prediction_df.merge(opp_team_df, left_on='team_name_nw_opponent', right_on='team', suffixes=('', '_nw_opponent'))
     return prediction_df
 
-def test_model(training_df_f, features, model):
-    _, rmse_dict = create_model(training_df_f, features, model, test=True)
+def test_model(training_df_f, features, model_func):
+    _, rmse_dict = create_model(training_df_f, features, model_func, test=True)
     print(rmse_dict)
 
-def train_full_model(training_df, features, prediction_df, model):
-    model_dict, _ = create_model(training_df, features, model, test=False)
+def train_full_model(training_df, features, prediction_df, model_func):
+    model_dict, _ = create_model(training_df, features, model_func, test=False)
     pred_df = predict_scores(prediction_df.dropna(), features, model_dict)
     return pred_df
 
@@ -64,13 +64,15 @@ def get_params():
     features = [
         'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
         'goals_scored', 'influence', 'creativity', 'threat', 'ict_index',
-        'minutes', 'ewma_total_points', 'ewma_team_goals', 'ewma_team_points',
+        'minutes', 'ewma_total_points', 
+        'ewma_team_goals', 
+        'ewma_team_points',
         'ewma_team_goals_nw_opponent', 
         'ewma_team_points_nw_opponent'
         ]
-    model = LinearRegression()
+    model_func = LinearRegression()
     output = f'transfer/outputs/predicted_gw{pred_gw}'
-    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output
+    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output
 
 def main():
     training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output = get_params()
