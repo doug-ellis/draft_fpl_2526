@@ -3,6 +3,7 @@ from modelling_funcs import *
 import requests
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 
 def get_training_df(year, n_gws, alpha):
     gw_df = get_ewma_df(year, n_gws, alpha)
@@ -28,12 +29,12 @@ def get_prediction_df(year, gw, alpha):
     prediction_df = prediction_df.merge(opp_team_df, left_on='team_name_nw_opponent', right_on='team', suffixes=('', '_nw_opponent'))
     return prediction_df
 
-def test_model(training_df_f, features):
-    _, rmse_dict = create_model(training_df_f, features, LinearRegression(), test=True)
+def test_model(training_df_f, features, model):
+    _, rmse_dict = create_model(training_df_f, features, model, test=True)
     print(rmse_dict)
 
-def train_full_model(training_df, features, prediction_df):
-    model_dict, _ = create_model(training_df, features, LinearRegression(), test=False)
+def train_full_model(training_df, features, prediction_df, model):
+    model_dict, _ = create_model(training_df, features, model, test=False)
     pred_df = predict_scores(prediction_df.dropna(), features, model_dict)
     return pred_df
 
@@ -63,17 +64,19 @@ def get_params():
         'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
         'goals_scored', 'influence', 'creativity', 'threat', 'ict_index',
         'minutes', 'ewma_total_points', 'ewma_team_goals', 'ewma_team_points',
-        'ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'
+        'ewma_team_goals_nw_opponent', 
+        'ewma_team_points_nw_opponent'
         ]
+    model = LinearRegression()
     output = f'transfer/outputs/predicted_gw{pred_gw}'
-    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, output
+    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output
 
 def main():
-    training_year, training_n_gws, pred_year, pred_gw, alpha, features, output = get_params()
+    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output = get_params()
     training_df = get_training_df(training_year, training_n_gws, alpha)
-    test_model(training_df, features)
+    test_model(training_df, features, model)
     prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
-    pred_df = train_full_model(training_df, features, prediction_df)
+    pred_df = train_full_model(training_df, features, prediction_df, model)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
     pred_df.to_csv(f"{output}.csv", index=False)
