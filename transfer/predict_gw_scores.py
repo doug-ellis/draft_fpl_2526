@@ -1,5 +1,5 @@
-from wrangle_data2 import *
-from modelling2 import *
+from wrangle_data_funcs import *
+from modelling_funcs import *
 import requests
 import pandas as pd
 from sklearn.linear_model import LinearRegression

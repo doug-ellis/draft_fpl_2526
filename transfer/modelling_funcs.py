@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-from wrangle_data2 import *
+from wrangle_data_funcs import *
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
