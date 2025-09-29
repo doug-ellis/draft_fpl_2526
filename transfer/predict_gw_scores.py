@@ -59,7 +59,7 @@ def get_params():
     training_year = 25
     training_n_gws = 38
     pred_year = 26
-    pred_gw = 6
+    pred_gw = 7
     alpha = 0.3
     features = [
         'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
@@ -71,7 +71,7 @@ def get_params():
         'ewma_team_points_nw_opponent'
         ]
     model_func = LinearRegression()
-    output = f'transfer/outputs/predicted_gw{pred_gw}'
+    output = f'C:/Users/User/Documents/fpl/draft_fpl_2526/transfer/outputs/predicted_gw{pred_gw}'
     return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output
 
 def main():

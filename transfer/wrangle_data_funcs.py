@@ -5,8 +5,8 @@ def import_data_from_vastaav(year, n_gws):
     year_range = f'20{year-1}-{year}'
     gw_df_list = []
     for i in range(1, n_gws+1):
-        gw_url = f"https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/refs/heads/master/data/{year_range}/gws/gw{i}.csv"
-        # gw_url = f"https://raw.githubusercontent.com/doug-ellis/Fantasy-Premier-League/refs/heads/doug-ellis/gw5/data/{year_range}/gws/gw{i}.csv"
+        # gw_url = f"https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/refs/heads/master/data/{year_range}/gws/gw{i}.csv"
+        gw_url = f"https://raw.githubusercontent.com/doug-ellis/Fantasy-Premier-League/refs/heads/doug-ellis/gw6/data/{year_range}/gws/gw{i}.csv"
         
         gw_df = pd.read_csv(gw_url, index_col=0)
         gw_df['gw'] = i
