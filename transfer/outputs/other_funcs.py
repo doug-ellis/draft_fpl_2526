@@ -40,6 +40,7 @@ def get_owner_dict():
 def get_all_best_11s(pred_df):
     owner_dict = get_owner_dict()
     best_11_list = []
+    pred_points_list = []
     for owner_id, owner_name in owner_dict.items():
         pred_df_owner = pred_df.query(f'owner=={owner_id}')
         formation, best_11_df = get_best_11(pred_df_owner)
@@ -47,5 +48,7 @@ def get_all_best_11s(pred_df):
         best_11_df['formation'] = f"{formation['DEF']}-{formation['MID']}-{formation['FWD']}"
         best_11_list.append(best_11_df)
         print(f"{owner_name}: predicted points {best_11_df['predicted_points'].sum().round(2)}")
+        pred_points_list.append(best_11_df['predicted_points'].sum().round(2))
+    return pred_points_list
     # all_best_11s_df = pd.concat(best_11_list).reset_index(drop=True)
     # return all_best_11s_df
