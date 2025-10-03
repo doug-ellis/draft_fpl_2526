@@ -26,7 +26,7 @@ def create_model(training_df, features, model_func, test):
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
             model_dict[pos] = model.fit(X_train, y_train)
             mae, rmse, r2 = evaluate_model(X_test, y_test, model_dict[pos])
-            rmse_dict[pos] = rmse
+            rmse_dict[pos] = round(rmse, 3)
         else:
             model_dict[pos] = model.fit(X, y)
             rmse_dict[pos] = None
