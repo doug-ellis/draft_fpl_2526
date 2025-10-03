@@ -76,6 +76,7 @@ def get_params():
 
 def main():
     training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output = get_params()
+    # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_year, training_n_gws, alpha)
     test_model(training_df, features, model)
     prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
