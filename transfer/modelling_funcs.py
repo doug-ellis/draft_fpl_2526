@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 from wrangle_data_funcs import *
 from sklearn.linear_model import LinearRegression
+from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -17,7 +18,8 @@ def create_model(training_df, features, model_func, test):
     model_dict = {}
     rmse_dict = {}
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        model = LinearRegression()
+        # model = LinearRegression()
+        model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
         training_df_pos = training_df.query('position==@pos')
         X = training_df_pos[features]
         y = training_df_pos['total_points_nw']
