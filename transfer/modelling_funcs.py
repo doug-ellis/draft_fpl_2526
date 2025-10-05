@@ -18,8 +18,8 @@ def create_model(training_df, features, model_func, test):
     model_dict = {}
     rmse_dict = {}
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        # model = LinearRegression()
-        model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+        model = LinearRegression()
+        # model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
         training_df_pos = training_df.query('position==@pos')
         X = training_df_pos[features]
         y = training_df_pos['total_points_nw']

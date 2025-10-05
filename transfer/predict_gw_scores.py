@@ -59,7 +59,7 @@ def get_params():
     training_year = 25
     training_n_gws = 38
     pred_year = 26
-    pred_gw = 7
+    pred_gw = 8
     alpha = 0.3
     features = [
         'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
