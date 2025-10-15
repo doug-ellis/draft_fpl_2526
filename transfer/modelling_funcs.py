@@ -18,8 +18,13 @@ def create_model(training_df, features, model_func, test):
     model_dict = {}
     rmse_dict = {}
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        model = LinearRegression()
-        # model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+        # model = model_func()
+        if model_func == XGBRegressor:
+            model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+        elif model_func == LinearRegression:
+            model = LinearRegression()
+        else:
+            raise ValueError("Unsupported model function")
         training_df_pos = training_df.query('position==@pos')
         X = training_df_pos[features]
         y = training_df_pos['total_points_nw']

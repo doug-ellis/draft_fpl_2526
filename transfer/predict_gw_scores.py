@@ -70,17 +70,17 @@ def get_params():
         'ewma_team_goals_nw_opponent', 
         'ewma_team_points_nw_opponent'
         ]
-    model_func = LinearRegression()
-    output = f'C:/Users/User/Documents/fpl/draft_fpl_2526/transfer/outputs/predicted_gw{pred_gw}'
+    model_func = LinearRegression
+    output = f'transfer/outputs/predicted_gw{pred_gw}_lr'
     return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output
 
 def main():
-    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output = get_params()
+    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_year, training_n_gws, alpha)
-    test_model(training_df, features, model)
+    test_model(training_df, features, model_func)
     prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
-    pred_df = train_full_model(training_df, features, prediction_df, model)
+    pred_df = train_full_model(training_df, features, prediction_df, model_func)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
     pred_df.to_csv(f"{output}.csv", index=False)
