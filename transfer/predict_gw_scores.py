@@ -10,7 +10,7 @@ def get_training_df(year, n_gws, alpha):
     gw_df = get_ewma_df(year, n_gws, alpha)
     training_df = lag_data_for_training(gw_df).dropna(subset=['total_points_nw'])
     non_zero_players = training_df.groupby('full_name').sum().query('total_points_nw>0').index
-    training_df_f = training_df.query('gw>1 and full_name in @non_zero_players')
+    training_df_f = training_df.query('gw>10 and full_name in @non_zero_players')
     return training_df_f
 
 def get_prediction_df(year, gw, alpha):
@@ -72,7 +72,7 @@ def get_params():
         'ewma_team_points_nw_opponent'
         ]
     model_func = LinearRegression
-    output = f'transfer/outputs/predicted_gw{pred_gw}_lr'
+    output = f'transfer/outputs/predicted_gw{pred_gw}_test'
     return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output
 
 def main():
