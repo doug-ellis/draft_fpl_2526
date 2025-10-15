@@ -33,6 +33,7 @@ def get_prediction_df(year, gw, alpha):
 def test_model(training_df_f, features, model_func):
     _, rmse_dict = create_model(training_df_f, features, model_func, test=True)
     print(rmse_dict)
+    return rmse_dict
 
 def train_full_model(training_df, features, prediction_df, model_func):
     model_dict, _ = create_model(training_df, features, model_func, test=False)
@@ -78,7 +79,7 @@ def main():
     training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_year, training_n_gws, alpha)
-    test_model(training_df, features, model_func)
+    _ = test_model(training_df, features, model_func)
     prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
     pred_df = train_full_model(training_df, features, prediction_df, model_func)
     pred_df = merge_ownership_data(pred_df)
