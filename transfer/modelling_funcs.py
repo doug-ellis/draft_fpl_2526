@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 from wrangle_data_funcs import *
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
@@ -23,6 +23,12 @@ def create_model(training_df, features, model_func, test):
             model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
         elif model_func == LinearRegression:
             model = LinearRegression()
+        elif model_func == Ridge:
+            model = Ridge(alpha=1.0)
+        elif model_func == Lasso:
+            model = Lasso(alpha=0.1)
+        elif model_func == ElasticNet:
+            model = ElasticNet(alpha=0.1, l1_ratio=0.5)
         else:
             raise ValueError("Unsupported model function")
         training_df_pos = training_df.query('position==@pos')
