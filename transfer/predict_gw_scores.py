@@ -2,7 +2,7 @@ from wrangle_data_funcs import *
 from modelling_funcs import *
 import requests
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
 
@@ -78,7 +78,7 @@ def get_params():
         'ewma_team_goals_nw_opponent', 
         'ewma_team_points_nw_opponent'
         ]
-    model_func = LinearRegression
+    model_func = ElasticNet
     avg_type = 'rolling'
     output = f'transfer/outputs/predicted_gw{pred_gw}_rolling'
     return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output
