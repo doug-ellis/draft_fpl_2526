@@ -6,15 +6,22 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
 
-def get_training_df(year, n_gws, alpha):
-    gw_df = get_ewma_df(year, n_gws, alpha)
+def get_training_df(year, n_gws, avg_type, alpha=0.3, rolling_gws=3):
+    if avg_type=='ewma':
+        gw_df = get_ewma_df(year, n_gws, alpha)
+    elif avg_type=='rolling':
+        gw_df = get_rolling_df(year, n_gws, rolling_gws)
     training_df = lag_data_for_training(gw_df).dropna(subset=['total_points_nw'])
     non_zero_players = training_df.groupby('full_name').sum().query('total_points_nw>0').index
     training_df_f = training_df.query('gw>10 and full_name in @non_zero_players')
     return training_df_f
 
-def get_prediction_df(year, gw, alpha):
-    prediction_df = get_ewma_df(year, gw-1, alpha).drop(['ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'], axis=1)
+def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=3):
+    if avg_type=='ewma':
+        prediction_df = get_ewma_df(year, gw-1, alpha).drop(['ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'], axis=1)
+    elif avg_type=='rolling':
+        prediction_df = get_rolling_df(year, gw-1, rolling_gws).drop(['ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'], axis=1)
+
     prediction_df = prediction_df.query(f'gw=={gw-1}')
 
     teamcode_dict = get_teamcodes(26)
@@ -72,15 +79,16 @@ def get_params():
         'ewma_team_points_nw_opponent'
         ]
     model_func = LinearRegression
-    output = f'transfer/outputs/predicted_gw{pred_gw}_test'
-    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output
+    avg_type = 'rolling'
+    output = f'transfer/outputs/predicted_gw{pred_gw}_rolling'
+    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output
 
 def main():
-    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, output = get_params()
+    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
-    training_df = get_training_df(training_year, training_n_gws, alpha)
+    training_df = get_training_df(training_year, training_n_gws, avg_type, alpha)
     _ = test_model(training_df, features, model_func)
-    prediction_df = get_prediction_df(pred_year, pred_gw, alpha)
+    prediction_df = get_prediction_df(pred_year, pred_gw, avg_type, alpha)
     pred_df = train_full_model(training_df, features, prediction_df, model_func)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]

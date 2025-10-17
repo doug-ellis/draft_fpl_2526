@@ -70,6 +70,21 @@ def ewma(gw_df, groupby_col, value_cols, alpha, rename_dict, remerge_cols):
     ewma_gw_df = gw_df_sorted[remerge_cols].join(ewma_gw_df)
     return ewma_gw_df
 
+def roll(gw_df, groupby_col, value_cols, rename_dict, remerge_cols, rolling_gws):
+    # Ensure the DataFrame is sorted by 'full_name' and 'gw'
+    gw_df_sorted = gw_df.sort_values([groupby_col, 'gw']).reset_index()
+
+    # Apply rolling mean within each group
+    rolling_gw_df = (
+        gw_df_sorted
+        .groupby(groupby_col, group_keys=False)
+        [value_cols]
+        .apply(lambda x: x.rolling(window=rolling_gws, min_periods=1).mean())
+    )
+    rolling_gw_df.rename(columns=rename_dict, inplace=True)
+    rolling_gw_df = gw_df_sorted[remerge_cols].join(rolling_gw_df)
+    return rolling_gw_df
+
 def get_teams_df(gw_df):
     gw_df_teams = gw_df[['team', 'gw', 'team_goals', 'team_points']]
     gw_df_teams = gw_df_teams.groupby(['team', 'gw']).first().reset_index()
@@ -123,6 +138,32 @@ def get_ewma_df(year, gw, ewma_alpha):
     merge_cols_teams = ['team', 'gw']
     ewma_gw_df_teams = ewma(gw_df_teams, 'team', team_value_cols, ewma_alpha, {'team_goals': 'ewma_team_goals',
                                                                             'team_points': 'ewma_team_points'}, merge_cols_teams)
+    merged_ewma_df = merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year)
+    return merged_ewma_df
+
+def get_rolling_df(year, gw, rolling_gws):
+    gw_df = import_data_from_vastaav(year, gw)
+    gw_df = add_team_data(gw_df)
+
+    gw_df['full_name'] = gw_df['name'].apply(clean_name)
+
+    player_value_cols = ['xP', 'assists', 'bonus', 'bps',
+       'clean_sheets', 'creativity', 'expected_assists',
+       'expected_goal_involvements', 'expected_goals',
+       'expected_goals_conceded', 'goals_conceded', 'goals_scored',
+       'ict_index', 'influence', 'minutes',
+       'own_goals', 'penalties_missed', 'penalties_saved',
+       'red_cards', 'saves', 'starts',
+       'threat', 'total_points', 'transfers_balance',
+       'transfers_in', 'transfers_out', 'value', 'yellow_cards']
+    merge_cols_players = ['full_name', 'gw', 'total_points', 'position','team','opponent_team']
+    ewma_gw_df_players = roll(gw_df, 'full_name', player_value_cols, {'total_points': 'ewma_total_points'}, merge_cols_players, rolling_gws)
+
+    gw_df_teams = get_teams_df(gw_df)
+    team_value_cols = ['team_goals', 'team_points']
+    merge_cols_teams = ['team', 'gw']
+    ewma_gw_df_teams = roll(gw_df_teams, 'team', team_value_cols, {'team_goals': 'ewma_team_goals',
+                                                                            'team_points': 'ewma_team_points'}, merge_cols_teams, rolling_gws)
     merged_ewma_df = merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year)
     return merged_ewma_df
 
