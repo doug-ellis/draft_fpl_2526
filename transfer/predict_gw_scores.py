@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
 
-def get_training_df(year, n_gws, avg_type, alpha=0.3, rolling_gws=3):
+def get_training_df(year, n_gws, avg_type, alpha=0.3, rolling_gws=5):
     if avg_type=='ewma':
         gw_df = get_ewma_df(year, n_gws, alpha)
     elif avg_type=='rolling':
@@ -16,7 +16,7 @@ def get_training_df(year, n_gws, avg_type, alpha=0.3, rolling_gws=3):
     training_df_f = training_df.query('gw>10 and full_name in @non_zero_players')
     return training_df_f
 
-def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=3):
+def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=5):
     if avg_type=='ewma':
         prediction_df = get_ewma_df(year, gw-1, alpha).drop(['ewma_team_goals_nw_opponent', 'ewma_team_points_nw_opponent'], axis=1)
     elif avg_type=='rolling':
