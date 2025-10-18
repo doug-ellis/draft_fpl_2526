@@ -6,14 +6,18 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
 
-def get_training_df(year, n_gws, avg_type, alpha=0.3, rolling_gws=5):
-    if avg_type=='ewma':
-        gw_df = get_ewma_df(year, n_gws, alpha)
-    elif avg_type=='rolling':
-        gw_df = get_rolling_df(year, n_gws, rolling_gws)
-    training_df = lag_data_for_training(gw_df).dropna(subset=['total_points_nw'])
-    non_zero_players = training_df.groupby('full_name').sum().query('total_points_nw>0').index
-    training_df_f = training_df.query('gw>10 and full_name in @non_zero_players')
+def get_training_df(training_years, n_gws, avg_type, alpha=0.3, rolling_gws=5):
+    training_dfs = []
+    for year in training_years:
+        if avg_type=='ewma':
+            gw_df = get_ewma_df(year, n_gws, alpha)
+        elif avg_type=='rolling':
+            gw_df = get_rolling_df(year, n_gws, rolling_gws)
+        training_df = lag_data_for_training(gw_df).dropna(subset=['total_points_nw'])
+        non_zero_players = training_df.groupby('full_name').sum().query('total_points_nw>0').index
+        training_df_f = training_df.query('gw>10 and full_name in @non_zero_players')
+        training_dfs.append(training_df_f.assign(year=year+2000))
+    training_df_f = pd.concat(training_dfs, ignore_index=True)
     return training_df_f
 
 def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=5):
@@ -64,7 +68,7 @@ def merge_ownership_data(pred_df):
     return pred_df_owners
 
 def get_params():
-    training_year = 25
+    training_years = [23, 24, 25]
     training_n_gws = 38
     pred_year = 26
     pred_gw = 8
@@ -80,13 +84,13 @@ def get_params():
         ]
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'transfer/outputs/predicted_gw{pred_gw}_rolling'
-    return training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output
+    output = f'transfer/outputs/predicted_gw{pred_gw}_test'
+    return training_years, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output
 
 def main():
-    training_year, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output = get_params()
+    training_years, training_n_gws, pred_year, pred_gw, alpha, features, model_func, avg_type, output = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
-    training_df = get_training_df(training_year, training_n_gws, avg_type, alpha)
+    training_df = get_training_df(training_years, training_n_gws, avg_type, alpha)
     _ = test_model(training_df, features, model_func)
     prediction_df = get_prediction_df(pred_year, pred_gw, avg_type, alpha)
     pred_df = train_full_model(training_df, features, prediction_df, model_func)
