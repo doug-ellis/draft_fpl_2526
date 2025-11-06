@@ -71,7 +71,7 @@ def get_params():
     training_years = [23, 24, 25]
     training_n_gws = 38
     pred_year = 26
-    pred_gw = 9
+    pred_gw = 10
     alpha = 0.3
     rolling_gws = 4
     features = [
@@ -85,7 +85,7 @@ def get_params():
         ]
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'outputs/predicted_gw{pred_gw}'
+    output = f'transfer/outputs/predicted_gw{pred_gw}'
     return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output
 
 def main():
