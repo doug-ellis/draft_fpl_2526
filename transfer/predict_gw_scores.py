@@ -71,7 +71,7 @@ def get_params():
     training_years = [23, 24, 25]
     training_n_gws = 38
     pred_year = 26
-    pred_gw = 12
+    pred_gw = 13
     alpha = 0.3
     rolling_gws = 4
     features = [
