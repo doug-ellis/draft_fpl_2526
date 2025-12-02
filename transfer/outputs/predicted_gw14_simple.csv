@@ -140,7 +140,7 @@ cristian_romero,DEF,Spurs,0.75,1.3043219155955417,
 crysencio_summerville,MID,West Ham,1.75,1.837273560355749,
 curtis_jones,MID,Liverpool,0.75,1.1272632177172102,
 daichi_kamada,MID,Crystal Palace,3.75,2.869062033972254,
-dan_burn,DEF,Newcastle,1.5,1.6270456418723274,85646.0
+dan_burn,DEF,Newcastle,1.5,1.6270456418723274,
 dan_ndoye,MID,Nott'm Forest,2.5,2.738582991640859,
 dan_neil,MID,Sunderland,0.0,0.3675077150771613,
 dane_scarlett,FWD,Spurs,0.0,0.44627559007138184,
@@ -178,7 +178,7 @@ dominic_sadi,MID,Bournemouth,0.0,0.3675077150771613,
 dominic_solanke_mitchell,FWD,Spurs,0.0,0.44627559007138184,
 dominik_szoboszlai,MID,Liverpool,2.0,3.3805787396723574,88376.0
 donyell_malen,MID,Aston Villa,3.5,2.5658668854229396,
-dorde_petrovic,GK,Bournemouth,1.5,2.675879378030122,88376.0
+dorde_petrovic,GK,Bournemouth,1.5,2.675879378030122,
 douglas_luiz_soares_de_paulo,MID,Nott'm Forest,0.25,0.5386948410767108,
 dwight_mcneil,MID,Everton,0.75,0.6592008740450417,
 eberechi_eze,MID,Arsenal,6.75,3.925110431608899,88376.0
@@ -216,7 +216,7 @@ etienne_green,GK,Burnley,0.0,0.17761064273681493,
 evan_ferguson,FWD,Brighton,0.0,0.47867931466795066,
 evann_guessand,MID,Aston Villa,0.5,0.9157754546434783,
 ezra_mayers,DEF,West Ham,0.0,0.36122274716250535,
-ezri_konsa_ngoyo,DEF,Aston Villa,4.25,2.769555035507757,87737.0
+ezri_konsa_ngoyo,DEF,Aston Villa,4.25,2.769555035507757,
 fabian_schar,DEF,Newcastle,1.5,1.0908307615564596,
 fabio_ferreira_vieira,MID,Arsenal,0.0,0.3675077150771613,
 fabio_freitas_gouveia_carvalho,MID,Brentford,0.25,0.41969767576532824,
@@ -266,7 +266,7 @@ harry_gray,FWD,Leeds,0.0,0.43806578380562994,
 harry_maguire,DEF,Man Utd,1.5,0.835285654984635,
 harry_tyrer,GK,Everton,0.0,0.23639166798364622,
 harry_wilson,MID,Fulham,5.75,3.249273884111641,
-harvey_barnes,MID,Newcastle,6.75,3.6434020270140364,
+harvey_barnes,MID,Newcastle,6.75,3.6434020270140364,87737.0
 harvey_elliott,MID,Aston Villa,0.0,0.3675077150771613,
 hjalmar_ekdal,DEF,Burnley,0.0,0.23385407455097185,
 hugo_bueno_lopez,DEF,Wolves,1.0,1.2387090953473414,
@@ -405,7 +405,7 @@ kenny_tete,DEF,Fulham,6.75,3.1531310588775865,
 kepa_arrizabalaga_revuelta,GK,Arsenal,0.0,0.24478895730462213,
 kevin_danso,DEF,Spurs,0.75,1.1495260637590592,
 kevin_santos_lopes_de_macedo,MID,Fulham,2.25,2.4897005900624967,
-kevin_schade,MID,Brentford,3.5,3.3395028069943287,87737.0
+kevin_schade,MID,Brentford,3.5,3.3395028069943287,
 ki_jana_hoever,DEF,Wolves,0.25,0.6108377305206787,
 kieran_morrison,MID,Liverpool,0.0,0.3675077150771613,
 kieran_trippier,DEF,Newcastle,0.0,0.7267573128435065,
@@ -444,7 +444,7 @@ lisandro_martinez,DEF,Man Utd,0.25,0.3855267811750787,
 loum_tchaouna,MID,Burnley,2.0,2.1411121756271903,
 luca_koleosho,MID,Burnley,0.0,0.3675077150771613,
 lucas_bergvall,MID,Spurs,1.5,1.049766145481154,
-lucas_digne,DEF,Aston Villa,4.5,2.6474770748339935,88376.0
+lucas_digne,DEF,Aston Villa,4.5,2.6474770748339935,
 lucas_estella_perri,GK,Leeds,2.0,2.5855910972198273,
 lucas_pires_silva,DEF,Burnley,0.25,0.3687360843205195,
 lucas_tolentino_coelho_de_lima,MID,West Ham,3.0,2.4015520671539146,
@@ -465,7 +465,7 @@ mads_hermansen,GK,West Ham,0.0,0.23639166798364622,
 mads_roerslev_rasmussen,DEF,Brentford,0.0,0.3430272225037148,
 malcolm_ebiowei,MID,Crystal Palace,0.0,0.3675077150771613,
 maldini_kacurri,DEF,Arsenal,0.0,0.37941827182129584,
-malick_thiaw,DEF,Newcastle,6.0,2.7233215863573097,
+malick_thiaw,DEF,Newcastle,6.0,2.7233215863573097,85646.0
 malick_yalcouye,MID,Brighton,0.0,0.3675077150771613,
 malo_gusto,DEF,Chelsea,6.0,2.8356586405389237,
 mamadou_sarr,DEF,Chelsea,0.0,0.4158093211388768,
@@ -473,7 +473,7 @@ manor_solomon,MID,Spurs,0.0,0.3675077150771613,
 manuel_akanji,DEF,Man City,0.0,0.3976137964800863,
 manuel_benson_hedilazio,MID,Burnley,0.0,0.3675077150771613,
 manuel_ugarte_ribeiro,MID,Man Utd,0.25,0.4744316904384892,
-marc_cucurella_saseta,DEF,Chelsea,5.0,3.1522248012814655,
+marc_cucurella_saseta,DEF,Chelsea,5.0,3.1522248012814655,88376.0
 marc_guehi,DEF,Crystal Palace,3.75,2.1791862845378986,93330.0
 marc_guiu_paz,FWD,Chelsea,1.25,0.8626174460715303,
 marco_bizot,GK,Aston Villa,0.0,0.253186246625598,
@@ -510,7 +510,7 @@ matt_turner,GK,Nott'm Forest,0.0,0.23639166798364622,
 matthew_cox,GK,Brentford,0.0,0.2279943786626703,
 matthijs_de_ligt,DEF,Man Utd,3.5,2.7082139708591315,94654.0
 matty_cash,DEF,Aston Villa,3.5,2.925123760006189,85646.0
-matz_sels,GK,Nott'm Forest,3.25,3.213982097468644,
+matz_sels,GK,Nott'm Forest,3.25,3.213982097468644,88376.0
 max_dowman,MID,Arsenal,0.0,0.3675077150771613,
 max_weiss,GK,Burnley,0.0,0.17761064273681493,
 maxence_lacroix,DEF,Crystal Palace,7.0,2.8324551380808964,94654.0
@@ -549,7 +549,7 @@ nathan_patterson,DEF,Everton,0.0,0.36122274716250535,
 nathaniel_clyne,DEF,Crystal Palace,0.0,0.36122274716250535,
 nayef_aguerd,DEF,West Ham,0.0,0.36122274716250535,
 nazarii_rusyn,FWD,Sunderland,0.0,0.46209552003892346,
-neco_williams,DEF,Nott'm Forest,4.25,2.7769009518182344,
+neco_williams,DEF,Nott'm Forest,4.25,2.7769009518182344,87737.0
 nectarios_triantis,MID,Sunderland,0.0,0.3675077150771613,
 nehemiah_oriola,MID,Brighton,0.25,0.4045196815373453,
 niall_huggins,DEF,Sunderland,0.0,0.3248316978449243,
@@ -594,7 +594,7 @@ patrick_roberts,MID,Sunderland,0.0,0.3675077150771613,
 pau_torres,DEF,Aston Villa,4.25,2.493434674637693,
 pedro_cardoso_de_lima,DEF,Wolves,0.0,0.23385407455097185,
 pedro_lomba_neto,MID,Chelsea,5.5,4.358351475051089,88376.0
-pedro_porro_sauceda,DEF,Spurs,1.25,1.8681327788503614,87737.0
+pedro_porro_sauceda,DEF,Spurs,1.25,1.8681327788503614,
 pervis_estupinan_tenorio,DEF,Brighton,0.0,0.4158093211388768,
 phil_foden,MID,Man City,6.0,4.103610896350881,88376.0
 philip_billing,MID,Bournemouth,0.0,0.3675077150771613,
@@ -607,7 +607,7 @@ rasmus_hojlund,FWD,Man Utd,0.0,0.46103181409545685,
 raul_jimenez_rodriguez,FWD,Fulham,3.25,3.810818881393525,94654.0
 rayan_ait_nouri,DEF,Man City,0.25,0.4411268035540753,
 rayan_cherki,MID,Man City,5.5,3.159022036540935,
-reece_james,DEF,Chelsea,4.25,2.35236026823008,
+reece_james,DEF,Chelsea,4.25,2.35236026823008,87737.0
 reece_welch,DEF,Everton,0.0,0.36122274716250535,
 reinildo_mandava,DEF,Sunderland,1.75,2.1439980688955527,
 reiss_nelson,MID,Brentford,0.75,0.6805239537859171,
