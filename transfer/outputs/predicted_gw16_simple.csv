@@ -1,7 +1,7 @@
 full_name,position,team,ewma_total_points,predicted_points,owner
 aaron_anselmino,DEF,Chelsea,0.0,0.3248316978449243,
 aaron_hickey,DEF,Brentford,2.5,0.9302061006823809,
-aaron_ramsdale,GK,Newcastle,1.25,2.419532135318529,85076.0
+aaron_ramsdale,GK,Newcastle,1.25,2.419532135318529,
 aaron_ramsey,MID,Burnley,0.0,0.3675077150771613,
 aaron_wan_bissaka,DEF,West Ham,2.5,2.6657746214744495,
 abdallah_sima,MID,Brighton,0.0,0.3675077150771613,
@@ -78,7 +78,7 @@ ben_winterburn,MID,Bournemouth,0.0,0.3675077150771613,
 benjamin_arthur,DEF,Brentford,0.0,0.2884406485273433,
 benjamin_fredrick,DEF,Brentford,0.0,0.2884406485273433,
 benjamin_lecomte,GK,Fulham,0.0,0.2279943786626703,
-benjamin_sesko,FWD,Man Utd,0.0,0.4742603087965608,87737.0
+benjamin_sesko,FWD,Man Utd,0.0,0.4742603087965608,
 benjamin_white,DEF,Arsenal,3.75,2.0498469711316156,
 benoit_badiashile_mukinayi,DEF,Chelsea,0.0,0.7737579259112537,
 bernardo_mota_veiga_de_carvalho_e_silva,MID,Man City,1.75,2.5915332755360483,
@@ -196,7 +196,7 @@ emerson_palmieri_dos_santos,DEF,West Ham,0.0,0.2884406485273433,
 emil_krafth,DEF,Newcastle,0.0,0.4158093211388768,
 emile_smith_rowe,MID,Fulham,2.75,2.5044686077611047,
 emiliano_buendia_stati,MID,Aston Villa,2.25,1.7016292060076008,
-emiliano_martinez_romero,GK,Aston Villa,3.5,2.5039214254142856,
+emiliano_martinez_romero,GK,Aston Villa,3.5,2.5039214254142856,85076.0
 emmanuel_agbadou,DEF,Wolves,2.25,2.309565591277119,
 endo_wataru,MID,Liverpool,0.25,0.42711281913871957,
 enes_unal,FWD,Bournemouth,2.0,1.1110939025471795,
@@ -207,7 +207,7 @@ enzo_fernandez,MID,Chelsea,4.5,3.6610321268467443,85076.0
 enzo_le_fee,MID,Sunderland,5.5,3.5108384261045438,
 eric_da_silva_moreira,MID,Nott'm Forest,0.0,0.3675077150771613,
 erling_haaland,FWD,Man City,5.0,4.007189060302663,88376.0
-estevao_almeida_de_oliveira_goncalves,MID,Chelsea,0.5,1.3226778770214267,85646.0
+estevao_almeida_de_oliveira_goncalves,MID,Chelsea,0.5,1.3226778770214267,
 ethan_ampadu,MID,Leeds,3.0,2.5133248414462233,
 ethan_nwaneri,MID,Arsenal,0.25,0.4092270726444336,
 ethan_pinnock,DEF,Brentford,1.0,0.7470126066020709,
@@ -216,7 +216,7 @@ etienne_green,GK,Burnley,0.0,0.17761064273681493,
 evan_ferguson,FWD,Brighton,0.0,0.47106919096616096,
 evann_guessand,MID,Aston Villa,2.0,1.468803755787666,
 ezra_mayers,DEF,West Ham,0.25,0.3242611264337708,
-ezri_konsa_ngoyo,DEF,Aston Villa,3.25,2.767505419943739,
+ezri_konsa_ngoyo,DEF,Aston Villa,3.25,2.767505419943739,88376.0
 fabian_schar,DEF,Newcastle,2.0,1.416069582019212,
 fabio_ferreira_vieira,MID,Arsenal,0.0,0.3675077150771613,
 fabio_freitas_gouveia_carvalho,MID,Brentford,0.0,0.3675077150771613,
@@ -272,7 +272,7 @@ hjalmar_ekdal,DEF,Burnley,1.25,1.1760275976569923,
 hugo_bueno_lopez,DEF,Wolves,0.75,0.45228483467975605,
 hugo_ekitike,FWD,Liverpool,4.0,2.47491263113727,85646.0
 hwang_hee_chan,MID,Wolves,0.5,0.8039422074633847,
-ian_maatsen,DEF,Aston Villa,1.0,1.8892416838208423,
+ian_maatsen,DEF,Aston Villa,1.0,1.8892416838208423,87737.0
 ian_poveda_ocampo,MID,Sunderland,0.0,0.3675077150771613,
 ibrahim_sangare,MID,Nott'm Forest,2.75,2.0096933645176973,
 ibrahima_konate,DEF,Liverpool,3.25,2.288214087608271,
@@ -388,7 +388,7 @@ julian_eyestone,GK,Brentford,0.0,0.20280251069974262,
 julio_enciso_espinola,MID,Brighton,0.0,0.3675077150771613,
 julio_soler_barreto,DEF,Bournemouth,0.25,0.3845316322448532,
 jun'ai_byfield,DEF,Spurs,0.0,0.30663617318613384,
-junior_kroupi,FWD,Bournemouth,1.25,1.9977195888214891,85646.0
+junior_kroupi,FWD,Bournemouth,1.25,1.9977195888214891,
 jurrien_timber,DEF,Arsenal,2.75,2.1790487206426397,87737.0
 justin_devenny,MID,Crystal Palace,1.0,0.7072411585514451,
 justin_kluivert,MID,Bournemouth,1.5,1.5862054383434432,
@@ -434,7 +434,7 @@ levi_samuels_colwill,DEF,Chelsea,0.0,0.3248316978449243,
 lewis_cook,MID,Bournemouth,0.5,1.4628778418836157,
 lewis_dobbin,MID,Aston Villa,0.0,0.3675077150771613,
 lewis_dunk,DEF,Brighton,2.0,2.198648419750082,
-lewis_hall,DEF,Newcastle,2.75,2.510946793352807,87737.0
+lewis_hall,DEF,Newcastle,2.75,2.510946793352807,
 lewis_miley,MID,Newcastle,4.5,2.710210620656899,
 lewis_o'brien,MID,Nott'm Forest,0.0,0.3675077150771613,
 lewis_orford,MID,West Ham,0.0,0.3675077150771613,
@@ -510,13 +510,13 @@ matt_o'riley,MID,Brighton,0.0,0.3675077150771613,
 matt_targett,DEF,Newcastle,0.0,0.4158093211388768,
 matt_turner,GK,Nott'm Forest,0.0,0.2279943786626703,
 matthew_cox,GK,Brentford,0.0,0.20280251069974262,
-matthijs_de_ligt,DEF,Man Utd,1.0,1.5970548026449862,94654.0
+matthijs_de_ligt,DEF,Man Utd,1.0,1.5970548026449862,
 matty_cash,DEF,Aston Villa,5.25,3.281159419436361,85646.0
 matz_sels,GK,Nott'm Forest,4.25,3.315280689132028,88376.0
 max_dowman,MID,Arsenal,0.0,0.3675077150771613,
 max_weiss,GK,Burnley,0.0,0.17761064273681493,
 maxence_lacroix,DEF,Crystal Palace,6.0,2.739937928138928,94654.0
-maxim_de_cuyper,DEF,Brighton,6.0,3.437507447304524,87737.0
+maxim_de_cuyper,DEF,Brighton,6.0,3.437507447304524,
 maxime_esteve,DEF,Burnley,3.25,2.2721371424909638,
 maximilian_kilman,DEF,West Ham,2.0,1.1760708456412465,
 maxwel_cornet,MID,West Ham,0.0,0.3675077150771613,
@@ -563,7 +563,7 @@ nico_gonzalez_iglesias,MID,Man City,2.75,2.5397924677908126,
 nico_o'reilly,DEF,Man City,2.75,3.1881973795353566,88376.0
 nicolas_dominguez,MID,Nott'm Forest,1.5,1.3961347141284572,
 nicolas_jackson,FWD,Chelsea,0.0,0.4589044022085236,
-nicolo_savona,DEF,Nott'm Forest,4.5,2.5641997949341713,88376.0
+nicolo_savona,DEF,Nott'm Forest,4.5,2.5641997949341713,
 nikola_milenkovic,DEF,Nott'm Forest,3.75,2.3422924819112403,
 noah_okafor,MID,Leeds,2.25,2.0652661454476284,
 noah_sadiki,MID,Sunderland,2.0,2.399741932923188,
@@ -605,12 +605,12 @@ piero_hincapie,DEF,Arsenal,3.5,2.3651260427566045,94654.0
 pierre_ekwah_elimby,MID,Sunderland,0.0,0.3675077150771613,
 quilindschy_hartman,DEF,Burnley,1.5,1.9492808485732085,
 radu_dragusin,DEF,Spurs,0.0,0.30663617318613384,
-randal_kolo_muani,FWD,Spurs,1.5,2.5843636720333945,
+randal_kolo_muani,FWD,Spurs,1.5,2.5843636720333945,87737.0
 rasmus_hojlund,FWD,Man Utd,0.0,0.4742603087965608,
 raul_jimenez_rodriguez,FWD,Fulham,3.5,3.914327183050377,85076.0
 rayan_ait_nouri,DEF,Man City,0.0,0.3976137964800863,
-rayan_cherki,MID,Man City,5.75,3.4387454991974082,
-reece_james,DEF,Chelsea,3.75,2.0271417056456404,
+rayan_cherki,MID,Man City,5.75,3.4387454991974082,85646.0
+reece_james,DEF,Chelsea,3.75,2.0271417056456404,87737.0
 reece_welch,DEF,Everton,0.0,0.3976137964800863,
 reinildo_mandava,DEF,Sunderland,2.25,1.7180960692400489,
 reiss_nelson,MID,Brentford,0.25,0.4513578880996788,
@@ -705,7 +705,7 @@ tosin_adarabioyo,DEF,Chelsea,3.25,1.4556031257129498,
 toti_gomes,DEF,Wolves,2.5,2.1046425358730363,
 trai_hume,DEF,Sunderland,1.0,1.9484060486420989,
 travis_patterson,DEF,Aston Villa,0.0,0.4522003704564578,
-trevoh_chalobah,DEF,Chelsea,6.75,2.9686290123353487,
+trevoh_chalobah,DEF,Chelsea,6.75,2.9686290123353487,94654.0
 trey_nyoni,MID,Liverpool,0.0,0.3675077150771613,
 triston_rowe,DEF,Aston Villa,0.0,0.4522003704564578,
 tyler_adams,MID,Bournemouth,3.0,1.9830550870633128,
@@ -745,7 +745,7 @@ yasin_ozcan,DEF,Aston Villa,0.0,0.4522003704564578,
 yehor_yarmoliuk,MID,Brentford,1.25,1.7021539601259537,
 yeremy_pino_santos,MID,Crystal Palace,4.5,3.6487763309100383,
 yerson_mosquera_valdelamar,DEF,Wolves,0.25,1.6197483644780954,
-yoane_wissa,FWD,Newcastle,0.25,0.6368136786691022,
+yoane_wissa,FWD,Newcastle,0.25,0.6368136786691022,85646.0
 youri_tielemans,MID,Aston Villa,2.0,3.056149853855594,
 youssef_ramalho_chermiti,FWD,Everton,0.0,0.47897915594993173,
 yunus_emre_konak,MID,Brentford,0.0,0.3675077150771613,
