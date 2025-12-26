@@ -1,5 +1,6 @@
 import pandas as pd
 import unidecode
+from sklearn.preprocessing import StandardScaler
 
 def import_data_from_vastaav(year, n_gws):
     year_range = f'20{year-1}-{year}'
@@ -171,3 +172,9 @@ def lag_data_for_training(merged_ewma_df):
     merged_ewma_df['total_points_nw'] = lag_feature(merged_ewma_df, 'total_points')
     merged_ewma_df['opponent_nw'] = lag_feature(merged_ewma_df, 'opponent_team_name')
     return merged_ewma_df
+
+def scale_df(df, features):
+    scaler = StandardScaler()
+    scaler.fit(df[features])
+    df[features] = scaler.transform(df[features])
+    return df, scaler
