@@ -92,9 +92,11 @@ def main():
     training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_years, training_n_gws, avg_type, alpha, rolling_gws)
-    _ = test_model(training_df, features, model_func)
+    training_df_scaled, _ = scale_df(training_df, features)
+    _ = test_model(training_df_scaled, features, model_func)
     prediction_df = get_prediction_df(pred_year, pred_gw, avg_type, alpha, rolling_gws)
-    pred_df = train_full_model(training_df, features, prediction_df, model_func)
+    prediction_df_scaled, _ = scale_df(prediction_df, features)
+    pred_df = train_full_model(training_df_scaled, features, prediction_df_scaled, model_func)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
     pred_df.to_csv(f"{output}.csv", index=False)
