@@ -95,7 +95,7 @@ def get_params():
        'ewma_team_points_nw_opponent', 'total_points']
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'transfer/outputs/predicted_gw{pred_gw}_test'
+    output = f'transfer/outputs/predicted_gw{pred_gw}'
     return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output
 
 def main():
