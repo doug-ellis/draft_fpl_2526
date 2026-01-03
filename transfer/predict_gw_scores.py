@@ -74,18 +74,28 @@ def get_params():
     pred_gw = 20
     alpha = 0.3
     rolling_gws = 4
-    features = [
-        'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
-        'goals_scored', 'influence', 'creativity', 'threat', 'ict_index',
-        'minutes', 'ewma_total_points', 
-        'ewma_team_goals', 
-        'ewma_team_points',
-        'ewma_team_goals_nw_opponent', 
-        'ewma_team_points_nw_opponent'
-        ]
+    # features = [
+    #     'assists', 'bonus', 'bps', 'clean_sheets', 'goals_conceded',
+    #     'goals_scored', 'influence', 'creativity', 'threat', 'ict_index',
+    #     'minutes', 'ewma_total_points', 
+    #     'ewma_team_goals', 
+    #     'ewma_team_points',
+    #     'ewma_team_goals_nw_opponent', 
+    #     'ewma_team_points_nw_opponent'
+    #     ] + ['expected_goals', 'expected_assists', 'expected_goal_involvements', 'expected_goals_conceded', 
+    #          'yellow_cards', 'saves']
+    features = ['xP', 'assists', 'bonus', 'bps', 'clean_sheets', 'creativity',
+       'expected_assists', 'expected_goal_involvements', 'expected_goals',
+       'expected_goals_conceded', 'goals_conceded', 'goals_scored',
+       'ict_index', 'influence', 'minutes', 'own_goals', 'penalties_missed',
+       'penalties_saved', 'red_cards', 'saves', 'starts', 'threat',
+       'ewma_total_points', 'transfers_balance', 'transfers_in',
+       'transfers_out', 'value', 'yellow_cards',
+       'ewma_team_goals', 'ewma_team_points', 'ewma_team_goals_nw_opponent',
+       'ewma_team_points_nw_opponent', 'total_points']
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'transfer/outputs/predicted_gw{pred_gw}'
+    output = f'transfer/outputs/predicted_gw{pred_gw}_test'
     return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output
 
 def main():
