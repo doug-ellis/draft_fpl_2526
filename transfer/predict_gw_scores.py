@@ -89,10 +89,13 @@ def get_params():
        'expected_goals_conceded', 'goals_conceded', 'goals_scored',
        'ict_index', 'influence', 'minutes', 'own_goals', 'penalties_missed',
        'penalties_saved', 'red_cards', 'saves', 'starts', 'threat',
-       'ewma_total_points', 'transfers_balance', 'transfers_in',
-       'transfers_out', 'value', 'yellow_cards',
+       'ewma_total_points', 
+    #    'transfers_balance', 'transfers_in','transfers_out', 
+       'value', 'yellow_cards',
        'ewma_team_goals', 'ewma_team_points', 'ewma_team_goals_nw_opponent',
-       'ewma_team_points_nw_opponent', 'total_points']
+       'ewma_team_points_nw_opponent', 
+    #    'total_points'
+       ]
     model_func = ElasticNet
     avg_type = 'rolling'
     output = f'transfer/outputs/predicted_gw{pred_gw}'
