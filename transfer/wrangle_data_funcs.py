@@ -104,7 +104,11 @@ def merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year):
 
     ewma_gw_df_opponent_team = ewma_gw_df_teams.rename(columns={'team': 'opponent_team_name', 
                                                             'ewma_team_goals': 'ewma_team_goals_nw_opponent',
-                                                            'ewma_team_points': 'ewma_team_points_nw_opponent'})
+                                                            'ewma_team_points': 'ewma_team_points_nw_opponent',
+                                                            'ewma_points_conceded_GK': 'ewma_points_conceded_GK_nw_opponent',
+                                                            'ewma_points_conceded_DEF': 'ewma_points_conceded_DEF_nw_opponent',
+                                                            'ewma_points_conceded_MID': 'ewma_points_conceded_MID_nw_opponent',
+                                                            'ewma_points_conceded_FWD': 'ewma_points_conceded_FWD_nw_opponent'})
     ewma_gw_df = ewma_gw_df.merge(ewma_gw_df_opponent_team, on=['opponent_team_name', 'gw'], how='left')
     return ewma_gw_df
 
@@ -116,29 +120,53 @@ def lag_feature(ewma_gw_df, feature):
     .shift(-1))
     return new_feature
 
+def get_fpl_points_scored_df(gw_df, year):
+    gw_df['total_points'] = gw_df['total_points'].astype(int)
+    points_conceded_groupby_cols = ['gw', 'opponent_team', 'position']
+    points_conceded_df = gw_df.groupby(points_conceded_groupby_cols
+                                            ).sum(numeric_only=True)[['total_points']]
+    points_conceded_df_combined = pd.DataFrame(index=points_conceded_df.loc[:,:, 'DEF'].index)
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        points_conceded_df_pos = points_conceded_df.loc[:,:, pos]
+        points_conceded_df_pos = points_conceded_df_pos.rename(columns={'total_points': f'points_conceded_{pos}'})
+        points_conceded_df_combined = points_conceded_df_combined.merge(points_conceded_df_pos, left_index=True, right_index=True)
+
+    teamcode_dict = get_teamcodes(year)
+    points_conceded_df_combined = points_conceded_df_combined.reset_index(names=['gw', 'team'])
+    points_conceded_df_combined['team'] = points_conceded_df_combined['team'].map(teamcode_dict)
+    return points_conceded_df_combined[['team', 'gw'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
+
 def get_ewma_df(year, gw, ewma_alpha):
     gw_df = import_data_from_vastaav(year, gw)
     gw_df = add_team_data(gw_df)
 
     gw_df['full_name'] = gw_df['name'].apply(clean_name)
 
+    # Get player specific stats
     player_value_cols = ['xP', 'assists', 'bonus', 'bps',
-       'clean_sheets', 'creativity', 'expected_assists',
-       'expected_goal_involvements', 'expected_goals',
-       'expected_goals_conceded', 'goals_conceded', 'goals_scored',
-       'ict_index', 'influence', 'minutes',
-       'own_goals', 'penalties_missed', 'penalties_saved',
-       'red_cards', 'saves', 'starts',
-       'threat', 'total_points', 'transfers_balance',
-       'transfers_in', 'transfers_out', 'value', 'yellow_cards']
+        'clean_sheets', 'creativity', 'expected_assists',
+        'expected_goal_involvements', 'expected_goals',
+        'expected_goals_conceded', 'goals_conceded', 'goals_scored',
+        'ict_index', 'influence', 'minutes',
+        'own_goals', 'penalties_missed', 'penalties_saved',
+        'red_cards', 'saves', 'starts',
+        'threat', 'total_points', 'transfers_balance',
+        'transfers_in', 'transfers_out', 'value', 'yellow_cards']
     merge_cols_players = ['full_name', 'gw', 'total_points', 'position','team','opponent_team']
-    ewma_gw_df_players = ewma(gw_df, 'full_name', player_value_cols, ewma_alpha, {'total_points': 'ewma_total_points'}, merge_cols_players)
+    ewma_gw_df_players = roll(gw_df, 'full_name', player_value_cols, {'total_points': 'ewma_total_points'}, merge_cols_players, rolling_gws)
 
+    # Get team specific stats
+    points_conceded_df = get_fpl_points_scored_df(gw_df, year)
     gw_df_teams = get_teams_df(gw_df)
-    team_value_cols = ['team_goals', 'team_points']
+    team_value_cols = ['team_goals', 'team_points'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]
     merge_cols_teams = ['team', 'gw']
+    gw_df_teams = gw_df_teams.merge(points_conceded_df, on=merge_cols_teams)
     ewma_gw_df_teams = ewma(gw_df_teams, 'team', team_value_cols, ewma_alpha, {'team_goals': 'ewma_team_goals',
-                                                                            'team_points': 'ewma_team_points'}, merge_cols_teams)
+                                                                    'team_points': 'ewma_team_points',
+                                                                    'points_conceded_GK': 'ewma_points_conceded_GK',
+                                                                    'points_conceded_DEF': 'ewma_points_conceded_DEF',
+                                                                    'points_conceded_MID': 'ewma_points_conceded_MID',
+                                                                    'points_conceded_FWD': 'ewma_points_conceded_FWD'}, merge_cols_teams)
     merged_ewma_df = merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year)
     return merged_ewma_df
 
@@ -148,23 +176,31 @@ def get_rolling_df(year, gw, rolling_gws):
 
     gw_df['full_name'] = gw_df['name'].apply(clean_name)
 
+    # Get player specific stats
     player_value_cols = ['xP', 'assists', 'bonus', 'bps',
-       'clean_sheets', 'creativity', 'expected_assists',
-       'expected_goal_involvements', 'expected_goals',
-       'expected_goals_conceded', 'goals_conceded', 'goals_scored',
-       'ict_index', 'influence', 'minutes',
-       'own_goals', 'penalties_missed', 'penalties_saved',
-       'red_cards', 'saves', 'starts',
-       'threat', 'total_points', 'transfers_balance',
-       'transfers_in', 'transfers_out', 'value', 'yellow_cards']
+        'clean_sheets', 'creativity', 'expected_assists',
+        'expected_goal_involvements', 'expected_goals',
+        'expected_goals_conceded', 'goals_conceded', 'goals_scored',
+        'ict_index', 'influence', 'minutes',
+        'own_goals', 'penalties_missed', 'penalties_saved',
+        'red_cards', 'saves', 'starts',
+        'threat', 'total_points', 'transfers_balance',
+        'transfers_in', 'transfers_out', 'value', 'yellow_cards']
     merge_cols_players = ['full_name', 'gw', 'total_points', 'position','team','opponent_team']
     ewma_gw_df_players = roll(gw_df, 'full_name', player_value_cols, {'total_points': 'ewma_total_points'}, merge_cols_players, rolling_gws)
 
+    # Get team specific stats
+    points_conceded_df = get_fpl_points_scored_df(gw_df, year)
     gw_df_teams = get_teams_df(gw_df)
-    team_value_cols = ['team_goals', 'team_points']
+    team_value_cols = ['team_goals', 'team_points'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]
     merge_cols_teams = ['team', 'gw']
+    gw_df_teams = gw_df_teams.merge(points_conceded_df, on=merge_cols_teams)
     ewma_gw_df_teams = roll(gw_df_teams, 'team', team_value_cols, {'team_goals': 'ewma_team_goals',
-                                                                            'team_points': 'ewma_team_points'}, merge_cols_teams, rolling_gws)
+                                                                    'team_points': 'ewma_team_points',
+                                                                    'points_conceded_GK': 'ewma_points_conceded_GK',
+                                                                    'points_conceded_DEF': 'ewma_points_conceded_DEF',
+                                                                    'points_conceded_MID': 'ewma_points_conceded_MID',
+                                                                    'points_conceded_FWD': 'ewma_points_conceded_FWD'}, merge_cols_teams, rolling_gws)
     merged_ewma_df = merge_ewma_dfs(ewma_gw_df_players, ewma_gw_df_teams, year)
     return merged_ewma_df
 
