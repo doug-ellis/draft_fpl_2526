@@ -28,7 +28,7 @@ def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=4):
 
     prediction_df = prediction_df.query(f'gw=={gw-1}')
 
-    teamcode_dict = get_teamcodes(26)
+    teamcode_dict = get_teamcodes(year)
     fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
     r = requests.get(fixtures_url).json()
     fixtures_df = pd.json_normalize(r)
