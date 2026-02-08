@@ -185,3 +185,4 @@ def get_fixture_df_gw(gw):
     r = requests.get(fixtures_url).json()
     fixtures_df = pd.json_normalize(r)
     fixtures_df_gw = fixtures_df.query(f'event=={gw}')
+    return fixtures_df_gw
