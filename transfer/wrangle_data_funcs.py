@@ -190,3 +190,24 @@ def get_fixture_dict(gw, year):
     a_teams = fixtures_df_gw['team_a'].map(teamcode_dict)
     fixture_dict = {**dict(zip(h_teams, a_teams)), **dict(zip(a_teams, h_teams))}
     return fixture_dict
+
+def get_gw_df(gw, year):
+    gw_df = import_data_from_vastaav(gw, year)
+    gw_df = add_team_data(gw_df)
+    gw_df['full_name'] = gw_df['name'].apply(clean_name)
+    return gw_df
+
+def get_fpl_points_scored_df(gw_df, year):
+    points_conceded_groupby_cols = ['gw', 'opponent_team', 'position']
+    points_conceded_df = gw_df.groupby(points_conceded_groupby_cols
+                                            ).sum(numeric_only=True)[['total_points']]
+    points_conceded_df_combined = pd.DataFrame(index=points_conceded_df.loc[:,:, 'DEF'].index)
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        points_conceded_df_pos = points_conceded_df.loc[:,:, pos]
+        points_conceded_df_pos = points_conceded_df_pos.rename(columns={'total_points': f'points_conceded_{pos}'})
+        points_conceded_df_combined = points_conceded_df_combined.merge(points_conceded_df_pos, left_index=True, right_index=True)
+
+    teamcode_dict = get_teamcodes(year)
+    points_conceded_df_combined = points_conceded_df_combined.reset_index(names=['gw', 'team'])
+    points_conceded_df_combined['team'] = points_conceded_df_combined['team'].map(teamcode_dict)
+    return points_conceded_df_combined[['team', 'gw'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
