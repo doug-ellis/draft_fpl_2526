@@ -108,11 +108,11 @@ def get_params():
        ]
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'transfer/outputs/predicted_gw{pred_gw}'
-    return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output
+    output_dir = f'transfer/outputs/'
+    return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output_dir
 
 def main():
-    training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output = get_params()
+    training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output_dir = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_years, training_n_gws, avg_type, alpha, rolling_gws)
     training_df_scaled, _ = scale_df(training_df, features)
@@ -122,8 +122,10 @@ def main():
     pred_df = train_full_model(training_df_scaled, features, prediction_df_scaled, model_func)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
-    pred_df.to_csv(f"{output}.csv", index=False)
-    pred_df_simple.to_csv(f'{output}_simple.csv', index=False)
+    pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
+    pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
+
+    get_fixture_difficulty_df(pred_year, pred_gw).to_csv(f'{output_dir}/fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv')
 
 if __name__ == "__main__":
     main()
