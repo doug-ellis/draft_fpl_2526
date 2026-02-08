@@ -1,4 +1,5 @@
 import pandas as pd
+import requests
 import unidecode
 from sklearn.preprocessing import StandardScaler
 
@@ -178,3 +179,9 @@ def scale_df(df, features):
     scaler.fit(df[features])
     df[features] = scaler.transform(df[features])
     return df, scaler
+
+def get_fixture_df_gw(gw):
+    fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
+    r = requests.get(fixtures_url).json()
+    fixtures_df = pd.json_normalize(r)
+    fixtures_df_gw = fixtures_df.query(f'event=={gw}')

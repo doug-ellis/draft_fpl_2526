@@ -29,10 +29,8 @@ def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=4):
     prediction_df = prediction_df.query(f'gw=={gw-1}')
 
     teamcode_dict = get_teamcodes(year)
-    fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
-    r = requests.get(fixtures_url).json()
-    fixtures_df = pd.json_normalize(r)
-    fixtures_df_gw = fixtures_df.query(f'event=={gw}')
+    fixtures_df_gw = get_fixture_df_gw(gw)
+
     h_teams = fixtures_df_gw['team_h'].map(teamcode_dict)
     a_teams = fixtures_df_gw['team_a'].map(teamcode_dict)
     fixture_dict = {**dict(zip(h_teams, a_teams)), **dict(zip(a_teams, h_teams))}
