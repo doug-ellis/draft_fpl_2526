@@ -125,7 +125,7 @@ def main():
     pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
     pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
 
-    get_fixture_difficulty_df(pred_year, pred_gw).to_csv(f'{output_dir}/fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv')
+    get_fixture_difficulty_df(pred_year, pred_gw).to_csv(f'{output_dir}/fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv', index=False)
 
 if __name__ == "__main__":
     main()
