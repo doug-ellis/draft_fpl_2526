@@ -28,12 +28,8 @@ def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=4):
 
     prediction_df = prediction_df.query(f'gw=={gw-1}')
 
-    teamcode_dict = get_teamcodes(year)
-    fixtures_df_gw = get_fixture_df_gw(gw)
+    fixture_dict = get_fixture_dict(gw, year)
 
-    h_teams = fixtures_df_gw['team_h'].map(teamcode_dict)
-    a_teams = fixtures_df_gw['team_a'].map(teamcode_dict)
-    fixture_dict = {**dict(zip(h_teams, a_teams)), **dict(zip(a_teams, h_teams))}
     prediction_df['team_name_nw_opponent'] = prediction_df['team'].map(fixture_dict)
     opp_team_df = prediction_df[['team', 'ewma_team_goals', 'ewma_team_points']].groupby('team').first().reset_index()
     prediction_df = prediction_df.merge(opp_team_df, left_on='team_name_nw_opponent', right_on='team', suffixes=('', '_nw_opponent'))

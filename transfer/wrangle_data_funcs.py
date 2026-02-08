@@ -180,9 +180,13 @@ def scale_df(df, features):
     df[features] = scaler.transform(df[features])
     return df, scaler
 
-def get_fixture_df_gw(gw):
+def get_fixture_dict(gw, year):
+    teamcode_dict = get_teamcodes(year)
     fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
     r = requests.get(fixtures_url).json()
     fixtures_df = pd.json_normalize(r)
     fixtures_df_gw = fixtures_df.query(f'event=={gw}')
-    return fixtures_df_gw
+    h_teams = fixtures_df_gw['team_h'].map(teamcode_dict)
+    a_teams = fixtures_df_gw['team_a'].map(teamcode_dict)
+    fixture_dict = {**dict(zip(h_teams, a_teams)), **dict(zip(a_teams, h_teams))}
+    return fixture_dict
