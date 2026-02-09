@@ -28,14 +28,8 @@ def get_prediction_df(year, gw, avg_type, alpha=0.3, rolling_gws=4):
 
     prediction_df = prediction_df.query(f'gw=={gw-1}')
 
-    teamcode_dict = get_teamcodes(26)
-    fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
-    r = requests.get(fixtures_url).json()
-    fixtures_df = pd.json_normalize(r)
-    fixtures_df_gw = fixtures_df.query(f'event=={gw}')
-    h_teams = fixtures_df_gw['team_h'].map(teamcode_dict)
-    a_teams = fixtures_df_gw['team_a'].map(teamcode_dict)
-    fixture_dict = {**dict(zip(h_teams, a_teams)), **dict(zip(a_teams, h_teams))}
+    fixture_dict = get_fixture_dict(gw, year)
+
     prediction_df['team_name_nw_opponent'] = prediction_df['team'].map(fixture_dict)
     opp_team_df = prediction_df[['team', 'ewma_team_goals', 'ewma_team_points']].groupby('team').first().reset_index()
     prediction_df = prediction_df.merge(opp_team_df, left_on='team_name_nw_opponent', right_on='team', suffixes=('', '_nw_opponent'))
@@ -66,6 +60,22 @@ def merge_ownership_data(pred_df):
 
     pred_df_owners = pred_df.merge(ownership_df_to_merge, on='full_name')
     return pred_df_owners
+
+def get_fixture_difficulty_df(year, gw):
+    gw_df = get_gw_df(gw-1, year)
+    points_conceded_gw_df = get_fpl_points_scored_df(gw_df, year).rename(columns={'team': 'opponent_team'})
+
+    points_conceded_rolled = roll(points_conceded_gw_df, 'opponent_team', 
+        ['points_conceded_GK', 'points_conceded_DEF', 'points_conceded_MID', 'points_conceded_FWD'],
+        {'points_conceded_GK': 'avg_points_conceded_GK_opponent', 'points_conceded_DEF': 'avg_points_conceded_DEF_opponent',
+        'points_conceded_MID': 'avg_points_conceded_MID_opponent', 'points_conceded_FWD': 'avg_points_conceded_FWD_opponent'}, 
+        ['opponent_team', 'gw'], 10)
+
+    points_conceded_rolled_gw = points_conceded_rolled.query(f'gw=={gw-1}')
+    fixture_dict = get_fixture_dict(gw, year)
+    points_conceded_rolled_gw['team'] = points_conceded_rolled_gw['opponent_team'].map(fixture_dict)
+    points_conceded_rolled_gw.set_index('team')
+    return points_conceded_rolled_gw
 
 def get_params():
     training_years = [23, 24, 25]
@@ -98,11 +108,11 @@ def get_params():
        ]
     model_func = ElasticNet
     avg_type = 'rolling'
-    output = f'transfer/outputs/predicted_gw{pred_gw}'
-    return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output
+    output_dir = f'transfer/outputs/'
+    return training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output_dir
 
 def main():
-    training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output = get_params()
+    training_years, training_n_gws, pred_year, pred_gw, alpha, rolling_gws, features, model_func, avg_type, output_dir = get_params()
     # print(training_year, training_n_gws, pred_year, pred_gw, alpha, features, model, output)
     training_df = get_training_df(training_years, training_n_gws, avg_type, alpha, rolling_gws)
     training_df_scaled, _ = scale_df(training_df, features)
@@ -112,8 +122,10 @@ def main():
     pred_df = train_full_model(training_df_scaled, features, prediction_df_scaled, model_func)
     pred_df = merge_ownership_data(pred_df)
     pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
-    pred_df.to_csv(f"{output}.csv", index=False)
-    pred_df_simple.to_csv(f'{output}_simple.csv', index=False)
+    pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
+    pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
+
+    get_fixture_difficulty_df(pred_year, pred_gw).to_csv(f'{output_dir}/fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv', index=False)
 
 if __name__ == "__main__":
     main()

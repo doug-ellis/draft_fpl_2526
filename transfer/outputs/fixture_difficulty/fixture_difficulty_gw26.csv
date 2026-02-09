@@ -1,0 +1,21 @@
+opponent_team,gw,avg_points_conceded_GK_opponent,avg_points_conceded_DEF_opponent,avg_points_conceded_MID_opponent,avg_points_conceded_FWD_opponent,team
+Arsenal,25,2.2,7.6,13.7,4.5,Wolves
+Aston Villa,25,3.1,14.1,22.7,5.8,Brighton
+Bournemouth,25,4.4,15.7,20.9,5.1,Everton
+Brentford,25,3.2,13.6,21.0,5.9,Arsenal
+Brighton,25,5.0,13.2,20.2,6.4,Aston Villa
+Burnley,25,3.4,11.1,16.2,4.2,Crystal Palace
+Chelsea,25,2.8,8.8,18.1,5.5,Leeds
+Crystal Palace,25,4.2,17.7,20.9,5.0,Burnley
+Everton,25,2.8,11.5,16.1,5.6,Bournemouth
+Fulham,25,3.8,13.4,26.7,9.4,Man City
+Leeds,25,5.4,23.9,28.5,8.6,Chelsea
+Liverpool,25,1.9,7.3,19.2,6.4,Sunderland
+Man City,25,2.5,4.9,19.3,6.0,Fulham
+Man Utd,25,4.7,18.7,23.2,5.4,West Ham
+Newcastle,25,2.7,7.8,16.2,5.9,Spurs
+Nott'm Forest,25,1.9,6.7,19.3,3.5,Wolves
+Spurs,25,3.0,9.3,22.0,5.2,Newcastle
+Sunderland,25,3.5,15.4,30.0,6.6,Liverpool
+West Ham,25,3.8,15.2,23.7,6.4,Man Utd
+Wolves,25,4.3,15.3,19.4,4.5,Nott'm Forest
