@@ -62,8 +62,8 @@ def merge_ownership_data(pred_df):
     return pred_df_owners
 
 def get_fixture_difficulty_df(year, gw):
-    gw_df = get_gw_df(year, gw-1)
-    points_conceded_gw_df = get_fpl_points_scored_df(gw_df, gw-1).rename(columns={'team': 'opponent_team'})
+    gw_df = get_gw_df(gw-1, year)
+    points_conceded_gw_df = get_fpl_points_scored_df(gw_df, year).rename(columns={'team': 'opponent_team'})
 
     points_conceded_rolled = roll(points_conceded_gw_df, 'opponent_team', 
         ['points_conceded_GK', 'points_conceded_DEF', 'points_conceded_MID', 'points_conceded_FWD'],
