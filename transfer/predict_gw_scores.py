@@ -61,21 +61,21 @@ def merge_ownership_data(pred_df):
     pred_df_owners = pred_df.merge(ownership_df_to_merge, on='full_name')
     return pred_df_owners
 
-def get_fixture_difficulty_df(year, gw, n_gws):
-    gw_df = get_gw_df(gw-1, year)
-    points_conceded_gw_df = get_fpl_points_scored_df(gw_df, year).rename(columns={'team': 'opponent_team'})
+# def get_fixture_difficulty_df(year, gw, n_gws):
+#     gw_df = get_gw_df(gw-1, year)
+#     points_conceded_gw_df = get_fpl_points_conceded_df(gw_df, year).rename(columns={'team': 'opponent_team'})
 
-    points_conceded_rolled = roll(points_conceded_gw_df, 'opponent_team', 
-        ['points_conceded_GK', 'points_conceded_DEF', 'points_conceded_MID', 'points_conceded_FWD'],
-        {'points_conceded_GK': 'avg_points_conceded_GK_opponent', 'points_conceded_DEF': 'avg_points_conceded_DEF_opponent',
-        'points_conceded_MID': 'avg_points_conceded_MID_opponent', 'points_conceded_FWD': 'avg_points_conceded_FWD_opponent'}, 
-        ['opponent_team', 'gw'], n_gws)
+#     points_conceded_rolled = roll(points_conceded_gw_df, 'opponent_team', 
+#         ['points_conceded_GK', 'points_conceded_DEF', 'points_conceded_MID', 'points_conceded_FWD'],
+#         {'points_conceded_GK': 'avg_points_conceded_GK_opponent', 'points_conceded_DEF': 'avg_points_conceded_DEF_opponent',
+#         'points_conceded_MID': 'avg_points_conceded_MID_opponent', 'points_conceded_FWD': 'avg_points_conceded_FWD_opponent'}, 
+#         ['opponent_team', 'gw'], n_gws)
 
-    points_conceded_rolled_gw = points_conceded_rolled.query(f'gw=={gw-1}')
-    fixture_dict = get_fixture_dict(gw, year)
-    points_conceded_rolled_gw['team'] = points_conceded_rolled_gw['opponent_team'].map(fixture_dict)
-    points_conceded_rolled_gw.set_index('team')
-    return points_conceded_rolled_gw
+#     points_conceded_rolled_gw = points_conceded_rolled.query(f'gw=={gw-1}')
+#     fixture_dict = get_fixture_dict(gw, year)
+#     points_conceded_rolled_gw['team'] = points_conceded_rolled_gw['opponent_team'].map(fixture_dict)
+#     points_conceded_rolled_gw.set_index('team')
+#     return points_conceded_rolled_gw
 
 def get_params():
     training_years = [23, 24, 25]
