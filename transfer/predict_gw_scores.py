@@ -121,12 +121,15 @@ def main():
     prediction_df_scaled, _ = scale_df(prediction_df, features)
     pred_df = train_full_model(training_df_scaled, features, prediction_df_scaled, model_func)
     pred_df = merge_ownership_data(pred_df)
-    pred_df_simple = pred_df[['full_name', 'position', 'team', 'ewma_total_points', 'predicted_points', 'owner']]
-    pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
-    pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
 
     fpl_points_by_team = get_fpl_points_by_team(pred_year, pred_gw, n_gws=10)
     fixture_diff_index = get_fixture_diff_index(fpl_points_by_team)
+    pred_df = integrate_fixture_diff_index(pred_df, fixture_diff_index)
+
+    pred_df_simple = pred_df[['full_name', 'position', 'team', 'team_nw_opponent', 'ewma_total_points', 'predicted_points', 'predicted_points_adj', 'fixture_diff_index', 'owner']]
+    pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
+    pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
+
     fixture_diff_index.to_csv(f'{output_dir}fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv', index=False)
 
 if __name__ == "__main__":

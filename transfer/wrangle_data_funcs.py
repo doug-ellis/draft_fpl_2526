@@ -261,3 +261,12 @@ def get_fixture_diff_index(fpl_points_by_team):
         fpl_points_by_team[f'fixture_diff_{pos}_multiplier'] = fpl_points_by_team[f'avg_points_conceded_{pos}_opponent_multiplier'] * fpl_points_by_team[f'avg_points_scored_{pos}_multiplier']
     
     return fpl_points_by_team
+
+def integrate_fixture_diff_index(pred_df, fixture_diff_index):
+    fixture_diff_index_multiplier = fixture_diff_index[[f'fixture_diff_{pos}_multiplier' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
+    fixture_diff_index_multiplier.rename(columns={f'fixture_diff_{pos}_multiplier': pos for pos in ['GK', 'DEF', 'MID', 'FWD']}, inplace=True)
+    fixture_diff_index_multiplier_melt = fixture_diff_index_multiplier.reset_index().drop(
+        ['gw', 'opponent_team'], axis=1).melt(id_vars='team', var_name='position', value_name='fixture_diff_index')
+    pred_df = pred_df.merge(fixture_diff_index_multiplier_melt, on=['team', 'position'], how='left')
+    pred_df['predicted_points_adj'] = pred_df['predicted_points'] * pred_df['fixture_diff_index']
+    return pred_df
