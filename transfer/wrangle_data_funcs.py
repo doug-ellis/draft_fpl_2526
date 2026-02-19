@@ -224,7 +224,7 @@ def get_fpl_points_conceded_df(gw_df, year):
     points_conceded_df_combined['team'] = points_conceded_df_combined['team'].map(teamcode_dict)
     return points_conceded_df_combined[['team', 'gw'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
 
-def get_fpl_points_by_team(year, gw, n_gws):
+def get_fpl_points_by_team(year, gw, n_gws=10):
     gw_df = get_gw_df(gw-1, year)
     points_scored_gw_df = get_fpl_points_scored_df(gw_df, year)
     points_conceded_gw_df = get_fpl_points_conceded_df(gw_df, year).rename(columns={'team': 'opponent_team'})
