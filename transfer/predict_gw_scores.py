@@ -126,7 +126,7 @@ def main():
     fixture_diff_index = get_fixture_diff_index(fpl_points_by_team)
     pred_df = integrate_fixture_diff_index(pred_df, fixture_diff_index)
 
-    pred_df_simple = pred_df[['full_name', 'position','predicted_points', 'predicted_points_adj', 'fixture_diff_index', 'owner']]
+    pred_df_simple = pred_df[['full_name', 'position', 'team', 'predicted_points', 'predicted_points_adj', 'fixture_diff_index', 'owner']]
     pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
     pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
 
