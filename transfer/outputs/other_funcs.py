@@ -18,14 +18,14 @@ def get_best_11(pred_df):
             team = []
             for pos, n in formation.items():
                 team.extend(pred_df.query(f'position == "{pos}"').head(n).to_dict('records'))
-            total_pred = sum(player['predicted_points'] for player in team)
+            total_pred = sum(player['predicted_points_adj'] for player in team)
             if total_pred > best_total:
                 best_total = total_pred
                 best_formation = formation
                 best_team = team
 
     best_11_df = pd.DataFrame(best_team)
-    return best_formation, best_11_df.sort_values('predicted_points', ascending=False)
+    return best_formation, best_11_df.sort_values('predicted_points_adj', ascending=False)
 
 def get_owner_dict():
     owner_dict = {88376.0: 'Doug',

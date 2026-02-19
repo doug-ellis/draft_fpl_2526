@@ -198,6 +198,18 @@ def get_gw_df(gw, year):
     return gw_df
 
 def get_fpl_points_scored_df(gw_df, year):
+    points_scored_groupby_cols = ['gw', 'team', 'position']
+    points_scored_df = gw_df.groupby(points_scored_groupby_cols
+                                            ).sum(numeric_only=True)[['total_points']]
+    points_scored_df_combined = pd.DataFrame(index=points_scored_df.loc[:,:, 'DEF'].index)
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        points_scored_df_pos = points_scored_df.loc[:,:, pos]
+        points_scored_df_pos = points_scored_df_pos.rename(columns={'total_points': f'points_scored_{pos}'})
+        points_scored_df_combined = points_scored_df_combined.merge(points_scored_df_pos, left_index=True, right_index=True)
+
+    return points_scored_df_combined.reset_index()[['team', 'gw'] + [f'points_scored_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
+
+def get_fpl_points_conceded_df(gw_df, year):
     points_conceded_groupby_cols = ['gw', 'opponent_team', 'position']
     points_conceded_df = gw_df.groupby(points_conceded_groupby_cols
                                             ).sum(numeric_only=True)[['total_points']]
@@ -211,3 +223,50 @@ def get_fpl_points_scored_df(gw_df, year):
     points_conceded_df_combined = points_conceded_df_combined.reset_index(names=['gw', 'team'])
     points_conceded_df_combined['team'] = points_conceded_df_combined['team'].map(teamcode_dict)
     return points_conceded_df_combined[['team', 'gw'] + [f'points_conceded_{pos}' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
+
+def get_fpl_points_by_team(year, gw, n_gws=10):
+    gw_df = get_gw_df(gw-1, year)
+    points_scored_gw_df = get_fpl_points_scored_df(gw_df, year)
+    points_conceded_gw_df = get_fpl_points_conceded_df(gw_df, year).rename(columns={'team': 'opponent_team'})
+
+    points_scored_rolled = roll(points_scored_gw_df, 'team', 
+        ['points_scored_GK', 'points_scored_DEF', 'points_scored_MID', 'points_scored_FWD'],
+        {'points_scored_GK': 'avg_points_scored_GK', 'points_scored_DEF': 'avg_points_scored_DEF',
+        'points_scored_MID': 'avg_points_scored_MID', 'points_scored_FWD': 'avg_points_scored_FWD'}, 
+        ['team', 'gw'], n_gws)
+
+    points_conceded_rolled = roll(points_conceded_gw_df, 'opponent_team', 
+        ['points_conceded_GK', 'points_conceded_DEF', 'points_conceded_MID', 'points_conceded_FWD'],
+        {'points_conceded_GK': 'avg_points_conceded_GK_opponent', 'points_conceded_DEF': 'avg_points_conceded_DEF_opponent',
+        'points_conceded_MID': 'avg_points_conceded_MID_opponent', 'points_conceded_FWD': 'avg_points_conceded_FWD_opponent'}, 
+        ['opponent_team', 'gw'], n_gws)
+
+    points_scored_rolled_gw = points_scored_rolled.query(f'gw=={gw-1}')
+    points_conceded_rolled_gw = points_conceded_rolled.query(f'gw=={gw-1}')
+    fixture_dict = get_fixture_dict(gw, year)
+    points_conceded_rolled_gw['team'] = points_conceded_rolled_gw['opponent_team'].map(fixture_dict)
+
+    fpl_points_by_team = points_conceded_rolled_gw.merge(points_scored_rolled_gw, left_on=['team', 'gw'], 
+                                                        right_on=['team', 'gw'], how='left')
+    return fpl_points_by_team.set_index(['team', 'gw', 'opponent_team'])
+
+def get_fixture_diff_index(fpl_points_by_team):
+    multiplier_cols = []
+    for col in fpl_points_by_team.columns:
+        median_score = fpl_points_by_team[col].median()
+        fpl_points_by_team[f'{col}_multiplier'] = fpl_points_by_team[col] / median_score
+        multiplier_cols.append(f'{col}_multiplier')
+
+    for pos in ['GK', 'DEF', 'MID', 'FWD']:
+        fpl_points_by_team[f'fixture_diff_{pos}_multiplier'] = fpl_points_by_team[f'avg_points_conceded_{pos}_opponent_multiplier'] * fpl_points_by_team[f'avg_points_scored_{pos}_multiplier']
+    
+    return fpl_points_by_team
+
+def integrate_fixture_diff_index(pred_df, fixture_diff_index):
+    fixture_diff_index_multiplier = fixture_diff_index[[f'fixture_diff_{pos}_multiplier' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
+    fixture_diff_index_multiplier.rename(columns={f'fixture_diff_{pos}_multiplier': pos for pos in ['GK', 'DEF', 'MID', 'FWD']}, inplace=True)
+    fixture_diff_index_multiplier_melt = fixture_diff_index_multiplier.reset_index().drop(
+        ['gw', 'opponent_team'], axis=1).melt(id_vars='team', var_name='position', value_name='fixture_diff_index')
+    pred_df = pred_df.merge(fixture_diff_index_multiplier_melt, on=['team', 'position'], how='left')
+    pred_df['predicted_points_adj'] = pred_df['predicted_points'] * pred_df['fixture_diff_index']
+    return pred_df
