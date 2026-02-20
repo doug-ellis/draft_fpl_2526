@@ -130,7 +130,7 @@ def main():
     pred_df.to_csv(f"{output_dir}predictions/predicted_gw{pred_gw}.csv", index=False)
     pred_df_simple.to_csv(f'{output_dir}predictions/predicted_gw{pred_gw}_simple.csv', index=False)
 
-    fixture_diff_index.to_csv(f'{output_dir}fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv', index=False)
+    fixture_diff_index.to_csv(f'{output_dir}fixture_difficulty/fixture_difficulty_gw{pred_gw}.csv')
 
 if __name__ == "__main__":
     main()
