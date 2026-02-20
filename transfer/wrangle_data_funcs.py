@@ -200,7 +200,11 @@ def get_gw_df(gw, year):
 def get_fpl_points_scored_df(gw_df, year):
     points_scored_groupby_cols = ['gw', 'team', 'position']
     points_scored_df = gw_df.groupby(points_scored_groupby_cols
-                                            ).sum(numeric_only=True)[['total_points']]
+                                            ).sum(numeric_only=True)[['total_points', 'minutes']]
+
+    points_scored_df['total_points'] = points_scored_df['total_points'] / (points_scored_df['minutes'] / 90)
+    points_scored_df = points_scored_df.drop('minutes', axis=1)
+
     points_scored_df_combined = pd.DataFrame(index=points_scored_df.loc[:,:, 'DEF'].index)
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
         points_scored_df_pos = points_scored_df.loc[:,:, pos]
@@ -212,7 +216,11 @@ def get_fpl_points_scored_df(gw_df, year):
 def get_fpl_points_conceded_df(gw_df, year):
     points_conceded_groupby_cols = ['gw', 'opponent_team', 'position']
     points_conceded_df = gw_df.groupby(points_conceded_groupby_cols
-                                            ).sum(numeric_only=True)[['total_points']]
+                                            ).sum(numeric_only=True)[['total_points', 'minutes']]
+    
+    points_conceded_df['total_points'] = points_conceded_df['total_points'] / (points_conceded_df['minutes'] / 90)
+    points_conceded_df = points_conceded_df.drop('minutes', axis=1)
+
     points_conceded_df_combined = pd.DataFrame(index=points_conceded_df.loc[:,:, 'DEF'].index)
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
         points_conceded_df_pos = points_conceded_df.loc[:,:, pos]
