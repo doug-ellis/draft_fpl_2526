@@ -192,7 +192,7 @@ def get_fixture_dict(gw, year):
     return fixture_dict
 
 def get_gw_df(gw, year):
-    gw_df = import_data_from_vastaav(gw, year)
+    gw_df = import_data_from_vastaav(year, gw)
     gw_df = add_team_data(gw_df)
     gw_df['full_name'] = gw_df['name'].apply(clean_name)
     return gw_df
