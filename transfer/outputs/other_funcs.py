@@ -27,6 +27,32 @@ def get_best_11(pred_df):
     best_11_df = pd.DataFrame(best_team)
     return best_formation, best_11_df.sort_values('predicted_points_adj', ascending=False)
 
+def get_best_11_noadj(pred_df):
+    # Possible formation constraints
+    gk = 1
+    def_range = range(3, 6)   # 3 to 5 DEF
+    mid_range = range(3, 6)   # 3 to 5 MID
+    fwd_range = range(1, 4)   # 1 to 3 FWD
+
+    best_total = -float('inf')
+    best_formation = None
+    best_team = None
+
+    for d, m, f in product(def_range, mid_range, fwd_range):
+        if gk + d + m + f == 11:
+            formation = {'GK': gk, 'DEF': d, 'MID': m, 'FWD': f}
+            team = []
+            for pos, n in formation.items():
+                team.extend(pred_df.query(f'position == "{pos}"').head(n).to_dict('records'))
+            total_pred = sum(player['predicted_points'] for player in team)
+            if total_pred > best_total:
+                best_total = total_pred
+                best_formation = formation
+                best_team = team
+
+    best_11_df = pd.DataFrame(best_team)
+    return best_formation, best_11_df.sort_values('predicted_points', ascending=False)
+
 def get_owner_dict():
     owner_dict = {88376.0: 'Doug',
               93330.0: 'Marcus',
