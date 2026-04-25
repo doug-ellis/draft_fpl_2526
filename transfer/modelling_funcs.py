@@ -1,11 +1,8 @@
-import requests
-import pandas as pd
-from wrangle_data_funcs import *
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
-import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 def evaluate_model(X, y, model):
     y_pred = model.predict(X)
@@ -14,42 +11,48 @@ def evaluate_model(X, y, model):
     r2 = r2_score(y, y_pred)
     return mae, rmse, r2
 
+def _build_model(model_func):
+    if model_func == XGBRegressor:
+        return XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+    if model_func == LinearRegression:
+        return LinearRegression()
+    if model_func == Ridge:
+        return Ridge(alpha=1.0)
+    if model_func == Lasso:
+        return Lasso(alpha=0.1)
+    if model_func == ElasticNet:
+        return ElasticNet(alpha=0.1, l1_ratio=0.5)
+    raise ValueError("Unsupported model function")
+
 def create_model(training_df, features, model_func, test):
     model_dict = {}
     rmse_dict = {}
+    scaler_dict = {}
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        # model = model_func()
-        if model_func == XGBRegressor:
-            model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
-        elif model_func == LinearRegression:
-            model = LinearRegression()
-        elif model_func == Ridge:
-            model = Ridge(alpha=1.0)
-        elif model_func == Lasso:
-            model = Lasso(alpha=0.1)
-        elif model_func == ElasticNet:
-            model = ElasticNet(alpha=0.1, l1_ratio=0.5)
-        else:
-            raise ValueError("Unsupported model function")
-        training_df_pos = training_df.query('position==@pos')
-        X = training_df_pos[features]
+        model = _build_model(model_func)
+        training_df_pos = training_df.query('position==@pos').dropna(subset=features + ['total_points_nw']).copy()
+        X = training_df_pos[features].copy()
         y = training_df_pos['total_points_nw']
+        scaler = StandardScaler()
 
         if test is True:
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            X_train, scaler = scale_df(X_train, features)
-            X_test[features] = scaler.transform(X_test[features])
-            model_dict[pos] = model.fit(X_train, y_train)
-            mae, rmse, r2 = evaluate_model(X_test, y_test, model_dict[pos])
+            X_train_scaled = scaler.fit_transform(X_train)
+            X_test_scaled = scaler.transform(X_test)
+            model_dict[pos] = model.fit(X_train_scaled, y_train)
+            mae, rmse, r2 = evaluate_model(X_test_scaled, y_test, model_dict[pos])
             rmse_dict[pos] = round(rmse, 3)
         else:
-            model_dict[pos] = model.fit(X, y)
+            X_scaled = scaler.fit_transform(X)
+            model_dict[pos] = model.fit(X_scaled, y)
             rmse_dict[pos] = None
-    return model_dict, rmse_dict
+        scaler_dict[pos] = scaler
+    return model_dict, rmse_dict, scaler_dict
 
-def predict_scores(prediction_df, features, model_dict):
+def predict_scores(prediction_df, features, model_dict, scaler_dict):
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        prediction_df_pos = prediction_df.query('position==@pos')
+        prediction_df_pos = prediction_df.query('position==@pos').copy()
         X_pred = prediction_df_pos[features]
-        prediction_df.loc[prediction_df['position']==pos, 'predicted_points'] = model_dict[pos].predict(X_pred)
+        X_pred_scaled = scaler_dict[pos].transform(X_pred)
+        prediction_df.loc[prediction_df['position']==pos, 'predicted_points'] = model_dict[pos].predict(X_pred_scaled)
     return prediction_df

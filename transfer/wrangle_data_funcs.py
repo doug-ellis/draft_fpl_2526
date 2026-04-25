@@ -182,7 +182,7 @@ def scale_df(df, features):
 def get_fixture_dict(gw, year):
     teamcode_dict = get_teamcodes(year)
     fixtures_url = 'https://fantasy.premierleague.com/api/fixtures/'
-    r = requests.get(fixtures_url).json()
+    r = requests.get(fixtures_url, timeout=20).json()
     fixtures_df = pd.json_normalize(r)
     fixtures_df_gw = fixtures_df.query(f'event=={gw}')
     h_teams = fixtures_df_gw['team_h'].map(teamcode_dict)
@@ -265,13 +265,16 @@ def get_fixture_diff_index(fpl_points_by_team):
         multiplier_cols.append(f'{col}_multiplier')
 
     for pos in ['GK', 'DEF', 'MID', 'FWD']:
-        fpl_points_by_team[f'fixture_diff_{pos}_multiplier'] = fpl_points_by_team[f'avg_points_conceded_{pos}_opponent_multiplier'] * fpl_points_by_team[f'avg_points_scored_{pos}_multiplier']
+        fpl_points_by_team[f'fixture_diff_{pos}_multiplier'] = (
+            fpl_points_by_team[f'avg_points_conceded_{pos}_opponent_multiplier']
+            * fpl_points_by_team[f'avg_points_scored_{pos}_multiplier']
+        ).clip(lower=0.5, upper=2)
     
     return fpl_points_by_team
 
 def integrate_fixture_diff_index(pred_df, fixture_diff_index):
     fixture_diff_index_multiplier = fixture_diff_index[[f'fixture_diff_{pos}_multiplier' for pos in ['GK', 'DEF', 'MID', 'FWD']]]
-    fixture_diff_index_multiplier.rename(columns={f'fixture_diff_{pos}_multiplier': pos for pos in ['GK', 'DEF', 'MID', 'FWD']}, inplace=True)
+    fixture_diff_index_multiplier = fixture_diff_index_multiplier.rename(columns={f'fixture_diff_{pos}_multiplier': pos for pos in ['GK', 'DEF', 'MID', 'FWD']})
     fixture_diff_index_multiplier_melt = fixture_diff_index_multiplier.reset_index().drop(
         ['gw', 'opponent_team'], axis=1).melt(id_vars='team', var_name='position', value_name='fixture_diff_index')
     pred_df = pred_df.merge(fixture_diff_index_multiplier_melt, on=['team', 'position'], how='left')
